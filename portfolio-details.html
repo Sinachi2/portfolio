@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - iPortfolio</title>
+  <title>Portfolio Details - SinaFast</title>
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -13,7 +13,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;500;700&family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,36 +28,39 @@
 
 <body class="portfolio-details-page">
 
+  <!-- Header / Navbar -->
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
     <div class="profile-img">
-      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+      <img src="assets/img/sinachi.jpeg" alt="Sinachi Franklin Ezeonyeka" class="img-fluid rounded-circle">
     </div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <h1 class="sitename">Alex Smith</h1>
+      <h1 class="sitename">SinaFast</h1>
     </a>
 
     <div class="social-links text-center">
-      <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="https://x.com/SinachiFra16993" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61575225039124" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/sinachi2016/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://github.com/Sinachi2" class="github"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/sinachi-franklin-ezeonyeka-581233373/" class="linkedin"><i class="bi bi-linkedin"></i></a>
     </div>
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
         <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+        <li><a href="#testimonials"><i class="bi bi-chat-left-quote navicon"></i> Testimonials</a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
-
   </header>
+  <!-- End Header -->
 
   <main class="main">
 
@@ -73,70 +76,132 @@
         </nav>
       </div>
     </div>
+    <!-- End Page Title -->
 
     <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
 
           <!-- Slider -->
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper init-swiper">
-
               <script type="application/json" class="swiper-config">
                 {
                   "loop": true,
                   "speed": 600,
                   "autoplay": {"delay": 5000},
                   "slidesPerView": "auto",
-                  "pagination": {"el": ".swiper-pagination","type": "bullets","clickable": true}
+                  "pagination": {"el": ".swiper-pagination", "type": "bullets", "clickable": true}
                 }
               </script>
 
               <div class="swiper-wrapper align-items-center">
-                <div class="swiper-slide"><img src="assets/img/FAITH.jpg" alt="NIN Card"></div>
-                <div class="swiper-slide"><img src="assets/img/blured ppt.jpg" alt="Passport"></div>
-                <div class="swiper-slide"><img src="assets/img/nin-slip (43).jpg" alt="NIN Slip"></div>
-                <div class="swiper-slide"><img src="assets/img/Screenshot 2026-01-04 121828.jpg" alt="PeterLightSpeed Portfolio"></div>
-                <div class="swiper-slide"><img src="assets/img/CV TABLE TEMPLATE.jpg" alt="Simple CV"></div>
-                <div class="swiper-slide"><img src="assets/img/OKAFOR CHINWANNE JOY CV.jpg" alt="ATC CV"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/app-1.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/product-1.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/branding-1.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/books-1.jpg" alt=""></div>
               </div>
-
               <div class="swiper-pagination"></div>
             </div>
           </div>
+          <!-- End Slider -->
 
-          <!-- Project Info -->
+          <!-- Sidebar Info -->
           <div class="col-lg-4">
+            <!-- Example 1: NIN Card -->
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project Information</h3>
+              <h3>Project information</h3>
               <ul>
+                <li><strong>Category</strong>: Design</li>
                 <li><strong>Client</strong>: Camex Global Concept</li>
-                <li><strong>Category</strong>: 
-                  <span id="portfolio-category">Responsive / Design / Documents</span>
-                </li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Portfolio Overview</h2>
-              <p>
-                This portfolio highlights responsive design, web development, and professional documentation projects, demonstrating expertise in building functional and visually appealing solutions.
-              </p>
+              <h2>NIN Card</h2>
+              <p>Nigeria’s official national ID used to verify identity and access government and financial services.</p>
             </div>
+
+            <!-- Example 2: Passport -->
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Design</li>
+                <li><strong>Client</strong>: Camex Global Concept</li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2>Passport</h2>
+              <p>An official government document that proves your identity and citizenship for international travel.</p>
+            </div>
+
+            <!-- Example 3: NIN Slip -->
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Design</li>
+                <li><strong>Client</strong>: Camex Global Concept</li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2>NIN Slip</h2>
+              <p>A temporary document issued by NIMC showing your National Identification Number (NIN) before receiving the official NIN Card.</p>
+            </div>
+
+            <!-- Example 4: PeterLightSpeed Portfolio -->
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Website</li>
+                <li><strong>Client</strong>: Camex Global Concept</li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2>PeterLightSpeed Portfolio</h2>
+              <p>A personal website showcasing PeterLightSpeed’s projects, skills, and professional achievements.</p>
+            </div>
+
+            <!-- Example 5: Simple CV -->
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Document</li>
+                <li><strong>Client</strong>: Camex Global Concept</li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2>Simple CV</h2>
+              <p>A brief document summarizing personal details, education, work experience, and skills.</p>
+            </div>
+
+            <!-- Example 6: ATC CV -->
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Document</li>
+                <li><strong>Client</strong>: Camex Global Concept</li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2>ATC CV</h2>
+              <p>A CV tailored for Air Traffic Controllers, highlighting relevant qualifications, certifications, experience, and skills in air traffic management.</p>
+            </div>
+
           </div>
+          <!-- End Sidebar Info -->
 
         </div>
       </div>
-
     </section>
+    <!-- /Portfolio Details Section -->
 
   </main>
 
+  <!-- Footer -->
   <footer id="footer" class="footer position-relative light-background">
     <div class="container">
-      <div class="copyright text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">SinaFast</strong> <span>All Rights Reserved</span></p>
       </div>
       <div class="credits">
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
@@ -157,4 +222,5 @@
   <script src="assets/js/main.js"></script>
 
 </body>
+
 </html>
