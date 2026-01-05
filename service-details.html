@@ -139,6 +139,40 @@
     return urlParams.get(param);
   }
 
+  // Service points for each service
+  const servicePoints = {
+    "Website Development": [
+      "Responsive, modern, and scalable websites.",
+      "Optimized for SEO and performance.",
+      "Clean, maintainable code using HTML, CSS, JS, and React."
+    ],
+    "UI/UX Design": [
+      "Intuitive and engaging user interfaces.",
+      "User-centered wireframes and prototypes.",
+      "Designs that maximize engagement and conversion."
+    ],
+    "Graphics Design": [
+      "Creative branding and marketing visuals.",
+      "Professional social media content.",
+      "High-quality digital assets."
+    ],
+    "Web Maintenance": [
+      "Regular updates and bug fixes.",
+      "Security patches and performance optimization.",
+      "Technical support for smooth operation."
+    ],
+    "E-Commerce Solutions": [
+      "Secure, fast, and user-friendly online stores.",
+      "Shopping cart and payment integration.",
+      "Product management and inventory tracking."
+    ],
+    "SEO Optimization": [
+      "Improve website visibility in search engines.",
+      "Increase organic traffic.",
+      "On-page, technical SEO, and content strategy recommendations."
+    ]
+  };
+
   document.addEventListener("DOMContentLoaded", function () {
     const title = getQueryParam("title");
     const description = getQueryParam("description");
@@ -147,6 +181,17 @@
       document.getElementById("service-title").textContent = title;
       document.getElementById("service-description-title").textContent = title;
       document.getElementById("service-description-text").textContent = description;
+
+      // Populate the service points dynamically
+      const pointsList = document.getElementById("service-points");
+      pointsList.innerHTML = ""; // Clear existing items
+      if (servicePoints[title]) {
+        servicePoints[title].forEach(point => {
+          const li = document.createElement("li");
+          li.innerHTML = `<i class="bi bi-check-circle"></i> <span>${point}</span>`;
+          pointsList.appendChild(li);
+        });
+      }
     }
 
     // Highlight the active menu item
@@ -158,6 +203,7 @@
     });
   });
 </script>
+
 
 </body>
 </html>
