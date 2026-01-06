@@ -1,81 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Certificate Details - SinaFast</title>
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.0/gsap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Details | SinaFast</title>
+    <meta name="description" content="Detailed overview of professional certifications earned by SinaFast.">
+    <meta name="keywords" content="Portfolio, Certificates, SinaFast, Web Development, UI/UX">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root { --sidebar-bg: #040b14; --primary-blue: #007bff; --light-blue-bg: #e3f2fd; }
+        body { font-family: 'Poppins', sans-serif; color: #272829; }
+
+        /* Sidebar Styling (Matching your provided Header) */
+        #header {
+            width: 300px;
+            height: 100vh;
+            position: fixed;
+            left: 0; top: 0; bottom: 0;
+            background: var(--sidebar-bg);
+            padding: 20px;
+            z-index: 997;
+            transition: all 0.5s;
+            overflow-y: auto;
+        }
+        .profile-img img { width: 120px; border: 8px solid #2c2f3f; display: block; margin: 0 auto; }
+        .sitename { font-size: 24px; color: #fff; font-weight: 700; margin-top: 15px; text-decoration: none; }
+        .social-links a { font-size: 18px; color: #fff; background: #212431; padding: 8px 0; margin-right: 4px; border-radius: 50%; width: 36px; height: 36px; display: inline-block; transition: 0.3s; }
+        .social-links a:hover { background: var(--primary-blue); }
+
+        /* Nav Menu */
+        .nav-menu { padding: 30px 0 0 0; }
+        .nav-menu a { display: flex; align-items: center; color: #a8a9b4; padding: 12px 15px; text-decoration: none; transition: 0.3s; font-size: 15px; }
+        .nav-menu a i { font-size: 24px; padding-right: 8px; color: #6f7180; }
+        .nav-menu a:hover, .nav-menu .active { color: #fff; }
+        .nav-menu a:hover i, .nav-menu .active i { color: var(--primary-blue); }
+
+        /* Main Content Positioning */
+        main { margin-left: 300px; }
+        .hero-section { background: #fff; padding: 60px 0; border-bottom: 1px solid #eee; }
+        
+        /* Category Sidebar */
+        .category-sidebar .list-group-item { border: none; font-size: 14px; border-radius: 5px; margin-bottom: 5px; }
+        .category-sidebar .active { background-color: var(--primary-blue) !important; border-color: var(--primary-blue) !important; }
+
+        /* Certificate Details */
+        .cert-main-img { border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 100%; margin-bottom: 20px; }
+        .skill-badge { background: #f0f4f8; color: var(--primary-blue); border-radius: 4px; padding: 5px 12px; margin: 0 8px 8px 0; display: inline-block; font-size: 13px; font-weight: 600; }
+
+        /* Footer */
+        footer { background-color: var(--light-blue-bg); padding: 30px 0; margin-top: 50px; text-align: center; }
+
+        @media (max-width: 1199px) {
+            #header { left: -300px; }
+            main { margin-left: 0; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="container-fluid">
-  <div class="row">
+    <header id="header" class="header d-flex flex-column">
+        <i class="header-toggle d-xl-none bi bi-list"></i>
 
-    <!-- Sidebar -->
-    <div class="col-lg-3 sidebar bg-light p-4">
-      <h3>Certificates</h3>
-      <ul class="list-unstyled">
-        <li><a href="certificate-details.html?id=responsive-web">Responsive Web Design</a></li>
-        <li><a href="certificate-details.html?id=javascript">JavaScript Algorithms & Data Structures</a></li>
-        <li><a href="certificate-details.html?id=frontend-libs">Frontend Libraries</a></li>
-        <li><a href="certificate-details.html?id=data-viz">Data Visualization</a></li>
-        <li><a href="certificate-details.html?id=ai-foundation">Generative AI – Foundation</a></li>
-        <li><a href="certificate-details.html?id=ai-medium">Generative AI – Medium</a></li>
-        <li><a href="certificate-details.html?id=ai-master">Generative AI – Master</a></li>
-        <li><a href="certificate-details.html?id=online-access">Access Information Online</a></li>
-        <li><a href="certificate-details.html?id=safe-online">Participate Safely Online</a></li>
-        <li><a href="certificate-details.html?id=creativity">Banish Your Inner Critic</a></li>
-        <li><a href="certificate-details.html?id=microsoft365">Getting Started with Microsoft 365</a></li>
-        <li><a href="certificate-details.html?id=hardware">Computer Hardware Basics</a></li>
-        <li><a href="certificate-details.html?id=os-basics">Operating Systems Basics</a></li>
-        <li><a href="certificate-details.html?id=cybersecurity">Introduction to Cybersecurity</a></li>
-      </ul>
-    </div>
+        <div class="profile-img">
+            <img src="assets/img/sinachi.jpeg" alt="Sinachi Franklin Ezeonyeka" class="img-fluid rounded-circle">
+        </div>
 
-    <!-- Certificate Main -->
-    <div class="col-lg-9 p-4 certificate-main">
-      <div id="certificate-content"></div>
-    </div>
+        <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+            <h1 class="sitename">SinaFast</h1>
+        </a>
 
-  </div>
-</div>
+        <div class="social-links text-center">
+            <a href="https://x.com/SinachiFra16993" target="_blank"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61575225039124" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/sinachi2016/" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://github.com/Sinachi2" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/sinachi-franklin-ezeonyeka-581233373/" target="_blank"><i class="bi bi-linkedin"></i></a>
+        </div>
 
-<script>
-const certificates = {
-  "responsive-web": {title:"Responsive Web Design", img:"assets/img/cert1.png", platform:"FreeCodeCamp", desc:"HTML, CSS, Flexbox, Grid and responsive layouts."},
-  "javascript": {title:"JavaScript Algorithms & Data Structures", img:"assets/img/cert2.png", platform:"FreeCodeCamp", desc:"Algorithms, problem-solving and core JavaScript."},
-  "frontend-libs": {title:"Frontend Development Libraries", img:"assets/img/cert3.png", platform:"FreeCodeCamp", desc:"React, Redux, Bootstrap, UI libraries."},
-  "data-viz": {title:"Data Visualization", img:"assets/img/cert4.png", platform:"FreeCodeCamp", desc:"Charts, graphs and D3.js visualization."},
-  "ai-foundation": {title:"Generative AI – Foundation", img:"assets/img/cert5.jpg", platform:"Nigeria Learning Passport", desc:"AI basics, ethics and applications."},
-  "ai-medium": {title:"Generative AI – Medium", img:"assets/img/cert6.jpg", platform:"Nigeria Learning Passport", desc:"Intermediate AI tools and workflows."},
-  "ai-master": {title:"Generative AI – Master", img:"assets/img/cert7.jpg", platform:"Nigeria Learning Passport", desc:"Advanced AI systems and responsible AI."},
-  "online-access": {title:"Access Information Online", img:"assets/img/cert8.jpg", platform:"Nigeria Learning Passport", desc:"Online research and digital literacy."},
-  "safe-online": {title:"Participate Safely Online", img:"assets/img/cert9.jpg", platform:"Nigeria Learning Passport", desc:"Online safety and digital responsibility."},
-  "creativity": {title:"Banish Your Inner Critic", img:"assets/img/cert10.jpg", platform:"Nigeria Learning Passport", desc:"Creativity and personal development."},
-  "microsoft365": {title:"Getting Started with Microsoft 365", img:"assets/img/cert11.jpg", platform:"Nigeria Learning Passport", desc:"Microsoft tools and productivity basics."},
-  "hardware": {title:"Computer Hardware Basics", img:"assets/img/cert12.jpg", platform:"Cisco", desc:"PC components and hardware fundamentals."},
-  "os-basics": {title:"Operating Systems Basics", img:"assets/img/cert13.jpg", platform:"Cisco", desc:"OS concepts and system management."},
-  "cybersecurity": {title:"Introduction to Cybersecurity", img:"assets/img/cert14.jpg", platform:"Cisco", desc:"Cyber threats, protection and awareness."}
-};
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html#hero"><i class="bi bi-house"></i> <span>Home</span></a></li>
+                <li><a href="index.html#about"><i class="bi bi-person"></i> <span>About</span></a></li>
+                <li><a href="index.html#projects"><i class="bi bi-file-earmark-code"></i> <span>Projects</span></a></li>
+                <li><a href="index.html#services"><i class="bi bi-hdd-stack"></i> <span>Services</span></a></li>
+                <li><a href="index.html#certificates" class="active"><i class="bi bi-award"></i> <span>Certificates</span></a></li>
+                <li><a href="index.html#contact"><i class="bi bi-envelope"></i> <span>Contact</span></a></li>
+            </ul>
+        </nav>
+    </header>
 
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
-const cert = certificates[id] || certificates["responsive-web"];
+    <main>
+        <section class="hero-section px-4">
+            <div class="container-fluid">
+                <h2 class="fw-bold">Certificate Details</h2>
+                <p class="text-muted">Discover the professional certifications I have earned through dedication and skill.</p>
+            </div>
+        </section>
 
-document.getElementById("certificate-content").innerHTML = `
-  <div class="certificate-detail">
-    <h2>${cert.title}</h2>
-    <img src="${cert.img}" class="img-fluid mb-3" alt="${cert.title}">
-    <p><strong>Platform:</strong> ${cert.platform}</p>
-    <p>${cert.desc}</p>
-    <a href="assets/docs/${id}.pdf" target="_blank" class="btn btn-primary">View/Download PDF</a>
-  </div>
-`;
+        <div class="container-fluid p-4">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="list-group category-sidebar shadow-sm mb-4">
+                        <a href="?id=responsive-web" class="list-group-item list-group-item-action" id="link-responsive-web">Front-End Development</a>
+                        <a href="?id=uiux" class="list-group-item list-group-item-action" id="link-uiux">UI/UX Design</a>
+                        <a href="?id=graphics" class="list-group-item list-group-item-action" id="link-graphics">Graphics Design</a>
+                        <a href="?id=seo" class="list-group-item list-group-item-action" id="link-seo">SEO Optimization</a>
+                        <a href="?id=javascript" class="list-group-item list-group-item-action" id="link-javascript">Full Stack Web Development</a>
+                    </div>
+                </div>
 
-gsap.from(".certificate-detail", {opacity:0, y:50, duration:0.8, ease:"power3.out"});
-</script>
+                <div class="col-lg-9">
+                    <div class="row" id="cert-content">
+                        <div class="col-12">
+                            <img id="cert-image" src="assets/img/placeholder.jpg" alt="Certificate" class="cert-main-img img-fluid">
+                            <h3 id="cert-title" class="fw-bold">Loading...</h3>
+                            <p class="mb-1"><strong>Issuer:</strong> <span id="cert-issuer">...</span></p>
+                            <p class="text-muted mb-4"><strong>Date:</strong> <span id="cert-date">...</span></p>
+                            
+                            <h5>Description</h5>
+                            <p id="cert-desc" class="text-secondary" style="line-height: 1.8;"></p>
+                            
+                            <h5 class="mt-4">Skills Covered</h5>
+                            <div id="cert-skills-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <footer>
+            <div class="container">
+                <p class="mb-1">© 2026 <strong>SinaFast</strong> — All Rights Reserved.</p>
+                <p class="small text-muted mb-3">Designed by Sinachi Franklin Ezeonyeka</p>
+                <div class="social-links">
+                    <a href="https://x.com/SinachiFra16993" target="_blank" style="color:#555"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://www.linkedin.com/in/sinachi-franklin-ezeonyeka-581233373/" target="_blank" style="color:#555"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        const certificates = {
+            "responsive-web": {
+                title: "Responsive Web Design",
+                issuer: "FreeCodeCamp",
+                date: "2024",
+                desc: "This certification covers the fundamentals of web design, starting from basic HTML and CSS to advanced layout techniques using Flexbox and CSS Grid. I successfully completed 5 major projects to demonstrate proficiency in creating accessible and mobile-first websites.",
+                skills: ["HTML5", "CSS3", "Responsive Design", "Web Accessibility", "Flexbox"],
+                img: "assets/img/cert1.png"
+            },
+            "javascript": {
+                title: "JavaScript Algorithms & Data Structures",
+                issuer: "FreeCodeCamp",
+                date: "2024",
+                desc: "Mastery of JavaScript fundamentals, including variables, arrays, objects, loops, and functions. This certificate emphasizes algorithmic thinking and data structure manipulation using ES6 standards.",
+                skills: ["ES6", "OOP", "Functional Programming", "Recursion", "Data Structures"],
+                img: "assets/img/cert2.png"
+            },
+            "uiux": {
+                title: "UI/UX Design Fundamentals",
+                issuer: "Coursera / Google",
+                date: "2024",
+                desc: "A professional look at the user experience journey. This involves user research, wireframing in Figma, and creating high-fidelity prototypes that solve real-world problems through design.",
+                skills: ["Figma", "User Research", "Wireframing", "Prototyping", "UX Strategy"],
+                img: "assets/img/cert-uiux.jpg"
+            }
+            // Add other keys (seo, graphics, etc.) here...
+        };
+
+        function renderDetails() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id') || 'responsive-web';
+            const data = certificates[id];
+
+            if (data) {
+                document.getElementById('cert-title').innerText = data.title;
+                document.getElementById('cert-issuer').innerText = data.issuer;
+                document.getElementById('cert-date').innerText = data.date;
+                document.getElementById('cert-desc').innerText = data.desc;
+                document.getElementById('cert-image').src = data.img;
+                
+                const skillsDiv = document.getElementById('cert-skills-list');
+                skillsDiv.innerHTML = data.skills.map(s => `<span class="skill-badge">${s}</span>`).join('');
+
+                // Update Active Link
+                document.querySelectorAll('.list-group-item').forEach(l => l.classList.remove('active'));
+                const activeLink = document.getElementById(`link-${id}`);
+                if(activeLink) activeLink.classList.add('active');
+
+                // GSAP Animation
+                gsap.from("#cert-image", { opacity: 0, scale: 0.9, duration: 0.8, ease: "back.out(1.7)" });
+                gsap.from("#cert-title, #cert-desc, .skill-badge", { 
+                    opacity: 0, 
+                    y: 20, 
+                    stagger: 0.1, 
+                    duration: 0.6 
+                });
+            }
+        }
+
+        window.addEventListener('load', renderDetails);
+    </script>
 </body>
 </html>
