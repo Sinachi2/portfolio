@@ -84,7 +84,7 @@
                 "@context": "https://schema.org",
                 "@type": "Person",
                 "name": "Sinachi Franklin Ezeonyeka",
-                "url": "https://yourdomain.com/",
+                "url": "https://sinachi2.github.io/Portfolio/",
                 "image": "https://yourdomain.com/assets/img/my-profile-img.jpg",
                 "jobTitle": "Front-End Developer & Web Designer",
                 "description": "Front-end developer and web designer building responsive, modern websites with HTML, CSS, JavaScript, React, and Bootstrap.",
@@ -186,14 +186,6 @@
                     title="LinkedIn"
                     target="_blank"
                     ><i class="bi bi-linkedin"></i
-                ></a>
-                <br>
-                <a
-                    href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=ezeonyekasinachi@gmail.com,%20ezeonyekasinachifranklin@gmail.com"
-                    class="email"
-                    title="Email"
-                    target="_blank"
-                    ><i class="bi bi-envelope"></i
                 ></a>
             </div>
 
@@ -1782,12 +1774,37 @@
 
   <!-- Social links hidden by default -->
   <div class="share-links">
-    <a href="https://facebook.com" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
-    <a href="https://twitter.com" target="_blank" title="Twitter"><i class="bi bi-twitter"></i></a>
-    <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-    <a href="https://x.com" target="_blank" title="X/Twitter"><i class="bi bi-x"></i></a>
-    <a href="https://instagram.com" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
-    <a href="https://github.com" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://x.com/SinachiFra16993" class="twitter" title="Twitter" target="_blank"
+                    ><i class="bi bi-twitter-x"></i
+                ></a>
+                <a
+                    href="https://www.facebook.com/profile.php?id=61575225039124"
+                    class="facebook"
+                    title="Facebook"
+                    target="_blank"
+                    ><i class="bi bi-facebook"></i
+                ></a>
+                <a href="https://www.instagram.com/sinachi2016/" class="instagram" title="Instagram" target="_blank"
+                    ><i class="bi bi-instagram"></i
+                ></a>
+                <a href="https://github.com/Sinachi2" class="github" title="GitHub"
+                    ><i class="bi bi-github" target="_blank"></i
+                ></a>
+                <a
+                    href="https://www.linkedin.com/in/sinachi-franklin-ezeonyeka-581233373/"
+                    class="linkedin"
+                    title="LinkedIn"
+                    target="_blank"
+                    ><i class="bi bi-linkedin"></i
+                ></a>
+                <br>
+                <a
+                    href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=ezeonyekasinachi@gmail.com,%20ezeonyekasinachifranklin@gmail.com"
+                    class="email"
+                    title="Email"
+                    target="_blank"
+                    ><i class="bi bi-envelope"></i
+                ></a>
   </div>
 </div>
 
@@ -1878,6 +1895,206 @@ shareBtn.addEventListener('click', function(e){
 
 <!-- Bootstrap Icons for social icons -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+<!-- Floating Portfolio Bot -->
+<button id="portfolio-bot-btn" style="position:fixed;bottom:40px;right:40px;width:60px;height:60px;border-radius:50%;background:linear-gradient(45deg,#6c63ff,#9f7eff);color:#fff;border:none;font-size:28px;cursor:pointer;box-shadow:0 6px 12px rgba(0,0,0,0.2);transition:transform 0.2s;z-index:1000;">
+  💬
+</button>
+
+<!-- Chat Window -->
+<div id="portfolio-bot" style="position:fixed;bottom:110px;right:40px;width:320px;background:#fff;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,0.25);display:none;flex-direction:column;font-family:Arial,sans-serif;overflow:hidden;z-index:1000;opacity:0;transform:translateY(20px);transition:all 0.3s;">
+  
+  <!-- Header -->
+  <div style="background:linear-gradient(90deg,#6c63ff,#9f7eff);color:#fff;padding:12px;display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:8px;">
+      <span style="font-weight:bold;font-size:14px;">SF Bot</span>
+      <!-- Online indicator -->
+      <div style="display:flex;align-items:center;gap:4px;font-size:10px;">
+        <span style="width:8px;height:8px;background:#00FF00;border-radius:50%;display:inline-block;animation:pulse 1.2s infinite;"></span>
+        <span>Online</span>
+      </div>
+    </div>
+    <button id="close-portfolio-bot" style="background:none;border:none;color:#fff;font-size:18px;cursor:pointer;">×</button>
+  </div>
+
+  <!-- Popular Questions -->
+  <div id="portfolio-questions" style="padding:10px;background:#f5f5f5;display:flex;flex-wrap:wrap;gap:6px;">
+    <button style="padding:4px 10px;font-size:12px;border-radius:12px;border:1px solid #6c63ff;background:#fff;cursor:pointer;" onclick="sendMessage('Tell me about you')">About Him</button>
+    <button style="padding:4px 10px;font-size:12px;border-radius:12px;border:1px solid #6c63ff;background:#fff;cursor:pointer;" onclick="sendMessage('Show me your skills')">His Skills</button>
+    <button style="padding:4px 10px;font-size:12px;border-radius:12px;border:1px solid #6c63ff;background:#fff;cursor:pointer;" onclick="sendMessage('Show your projects')">His Projects</button>
+    <button style="padding:4px 10px;font-size:12px;border-radius:12px;border:1px solid #6c63ff;background:#fff;cursor:pointer;" onclick="sendMessage('Certificates')">His Certificates</button>
+    <button style="padding:4px 10px;font-size:12px;border-radius:12px;border:1px solid #6c63ff;background:#fff;cursor:pointer;" onclick="sendMessage('Contact information')">Contact Him</button>
+  </div>
+
+  <!-- Chat Body -->
+  <div id="portfolio-bot-body" style="flex:1;padding:10px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;max-height:250px;background:#fff;"></div>
+
+  <!-- Input -->
+  <form id="portfolio-bot-input" style="display:flex;padding:10px;border-top:1px solid #ddd;background:#f9f9f9;">
+    <input type="text" id="portfolio-user-message" placeholder="Ask me anything..." style="flex:1;padding:8px 12px;border-radius:50px;border:1px solid #ccc;outline:none;">
+    <button type="submit" style="margin-left:6px;padding:8px 12px;border-radius:50%;border:none;background:#6c63ff;color:#fff;cursor:pointer;">→</button>
+  </form>
+
+</div>
+
+<style>
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 0.9; }
+}
+
+.typing-dots span {
+  display:inline-block;
+  width:6px;
+  height:6px;
+  margin-right:3px;
+  background:#6c63ff;
+  border-radius:50%;
+  animation: blink 1.4s infinite both;
+}
+.typing-dots span:nth-child(2){ animation-delay:0.2s; }
+.typing-dots span:nth-child(3){ animation-delay:0.4s; }
+@keyframes blink {
+  0%,80%,100% { opacity:0; }
+  40% { opacity:1; }
+}
+
+.bot-message {
+  align-self:flex-start;
+  background:linear-gradient(90deg,#6c63ff,#9f7eff);
+  color:#fff;
+  padding:8px 12px;
+  border-radius:12px;
+  max-width:80%;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  animation: slideIn 0.3s ease-out;
+}
+
+.user-message {
+  align-self:flex-end;
+  background:#6c63ff;
+  color:#fff;
+  padding:8px 12px;
+  border-radius:12px;
+  max-width:80%;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  animation: slideIn 0.3s ease-out;
+}
+
+.quick-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:6px;
+}
+
+.quick-actions button {
+  background:#fff;
+  border:1px solid #6c63ff;
+  border-radius:12px;
+  padding:4px 10px;
+  font-size:12px;
+  cursor:pointer;
+}
+
+@keyframes slideIn {
+  from { transform:translateY(10px); opacity:0; }
+  to { transform:translateY(0); opacity:1; }
+}
+</style>
+
+<script>
+const botBtn = document.getElementById('portfolio-bot-btn');
+const botWindow = document.getElementById('portfolio-bot');
+const closeBtn = document.getElementById('close-portfolio-bot');
+const chatBody = document.getElementById('portfolio-bot-body');
+const chatForm = document.getElementById('portfolio-bot-input');
+const userInput = document.getElementById('portfolio-user-message');
+
+// Open/Close bot
+botBtn.addEventListener('click', () => {
+  botWindow.style.display = 'flex';
+  setTimeout(() => { botWindow.style.opacity = 1; botWindow.style.transform = 'translateY(0)'; }, 10);
+});
+closeBtn.addEventListener('click', () => {
+  botWindow.style.opacity = 0;
+  botWindow.style.transform = 'translateY(20px)';
+  setTimeout(() => botWindow.style.display = 'none', 300);
+});
+
+// Scroll helper
+function scrollToBottom() {
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+// Popular question helper
+function sendMessage(msg){
+  userInput.value = msg;
+  chatForm.dispatchEvent(new Event('submit'));
+}
+
+// Handle message input
+chatForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const msg = userInput.value.trim();
+  if(!msg) return;
+
+  // User message
+  const userDiv = document.createElement('div');
+  userDiv.textContent = msg;
+  userDiv.className = 'user-message';
+  chatBody.appendChild(userDiv);
+  userInput.value = '';
+  scrollToBottom();
+
+  // Bot typing
+  const botDiv = document.createElement('div');
+  botDiv.className = 'bot-message';
+  botDiv.innerHTML = '<span class="typing-dots"><span></span><span></span><span></span></span>';
+  chatBody.appendChild(botDiv);
+  scrollToBottom();
+
+  // Bot response after delay
+  setTimeout(() => {
+    botDiv.innerHTML = getBotResponse(msg) + getQuickActions(msg);
+    scrollToBottom();
+  }, 1000);
+});
+
+// Bot responses
+function getBotResponse(msg){
+  const lower = msg.toLowerCase();
+  if(lower.includes("about")) return "Hi! I'm Sinachi Franklin Ezeonyeka, a Front-End Developer and Web Designer.";
+  if(lower.includes("skills")) return "I specialize in HTML, CSS, JavaScript, Bootstrap, and React.";
+  if(lower.includes("projects")) return "Check out my portfolio for projects like TrendyCart, K-Fabason, and more!";
+  if(lower.includes("certificate")) return "I have certificates in Web Development, UI/UX Design, and other tech skills.";
+  if(lower.includes("contact")) return "You can contact me at ezeonyekasinachi@gmail.com or +234 8063332087.";
+  return "I’m here to help! Ask me about my skills, projects, or contact info.";
+}
+
+// Quick Actions under bot messages
+function getQuickActions(msg){
+  return `<div class="quick-actions">
+    <button onclick="scrollToSection('projects')">View His Projects</button>
+    <button onclick="scrollToSection('skills')">His Skills</button>
+    <button onclick="scrollToSection('contact')">Contact Him</button>
+    <button onclick="downloadResume(assets/img/My CV.pdf)">Download His Resume</button>
+  </div>`;
+}
+
+// Example functions for quick actions
+function scrollToSection(id){
+  const section = document.getElementById(id);
+  if(section) section.scrollIntoView({behavior:'smooth'});
+}
+function downloadResume(){
+  window.open('resume.pdf','_blank');
+}
+
+// Floating button hover effect
+botBtn.addEventListener('mouseenter', () => botBtn.style.transform = 'scale(1.1)');
+botBtn.addEventListener('mouseleave', () => botBtn.style.transform = 'scale(1)');
+</script>
 
         </main>
 
