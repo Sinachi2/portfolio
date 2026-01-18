@@ -1873,274 +1873,135 @@
                 });
             </script>
 
-            <button id="portfolio-bot-btn" class="bot-button">💬</button>
+<!-- Premium SinaFast AI Bot -->
+<div id="sfAiWrapper">
+  <button id="sfAiToggle" class="sf-ai-btn">🤖<span class="sf-ai-online"></span></button>
+  
+  <div id="sfAiBox" class="sf-ai-box">
+    <div class="sf-ai-header">
+      <strong>SinaFast AI</strong>
+      <span class="sf-ai-status">Online</span>
+      <button id="sfAiClose">×</button>
+    </div>
+    <div class="sf-ai-questions">
+      <button onclick="quick('Hello')">Hello</button>
+      <button onclick="quick('What services do you offer?')">Services</button>
+      <button onclick="quick('Show portfolio projects')">Portfolio</button>
+      <button onclick="quick('What skills do you have?')">Skills</button>
+      <button onclick="quick('How can I hire you?')">Hire</button>
+      <button onclick="quick('Help')">Help</button>
+    </div>
+    <div id="sfAiMessages" class="sf-ai-messages">
+      <div class="sf-ai-msg bot"><span>Hi! I’m SinaFast AI. Ask me anything about this portfolio.</span></div>
+    </div>
+    <div id="sfAiTyping" class="sf-ai-typing">SinaFast AI is typing…</div>
+    <div class="sf-ai-input">
+      <input type="text" id="sfAiInput" placeholder="Type a message...">
+      <button id="sfAiSend">Send</button>
+    </div>
+  </div>
+</div>
 
-            <!-- Chat Window -->
-            <div id="portfolio-bot" class="bot-window">
-                <!-- Header -->
-                <div class="bot-header">
-                    <div class="bot-title">SinaFast AI <span class="online-dot"></span> Online</div>
-                    <button id="close-portfolio-bot" class="close-btn">×</button>
-                </div>
+<style>
+#sfAiWrapper { position: fixed; right: 30px; bottom: 150px; z-index: 9999; font-family: 'Poppins', sans-serif; }
+.sf-ai-btn { width:60px; height:60px; border-radius:50%; background:linear-gradient(135deg,#6c63ff,#ff8a00); color:#fff; font-size:26px; cursor:pointer; box-shadow:0 10px 25px rgba(0,0,0,.3); position:relative; transition: transform 0.3s ease; }
+.sf-ai-btn:hover { transform: scale(1.1); }
+.sf-ai-btn .sf-ai-online { position:absolute; top:6px; right:6px; width:10px; height:10px; background:#00ff6a; border-radius:50%; box-shadow:0 0 3px #00ff6a; }
+.sf-ai-box { width:360px; max-width:90vw; background:#fff; border-radius:16px; box-shadow:0 20px 40px rgba(0,0,0,.3); display:none; flex-direction:column; overflow:hidden; transition: transform 0.3s ease, opacity 0.3s ease; cursor: move; }
+.sf-ai-header { background:linear-gradient(135deg,#6c63ff,#ff8a00); color:#fff; padding:14px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; font-size:15px; cursor: move; }
+.sf-ai-header button { background:none; border:none; font-size:18px; color:#fff; cursor:pointer; }
+.sf-ai-questions { display:flex; flex-wrap:wrap; gap:6px; padding:10px; background:#f7f7f7; }
+.sf-ai-questions button { font-size:12px; padding:5px 10px; border-radius:20px; border:1px solid #ddd; background:#fff; cursor:pointer; transition:all 0.2s; }
+.sf-ai-questions button:hover { background:#6c63ff; color:#fff; border-color:#6c63ff; }
+.sf-ai-messages { height:280px; padding:12px; overflow-y:auto; font-size:14px; }
+.sf-ai-msg { margin-bottom:10px; display:flex; }
+.sf-ai-msg span { display:inline-block; padding:8px 14px; border-radius:12px; max-width:80%; line-height:1.4; }
+.sf-ai-msg.user span { background:#6c63ff; color:#fff; margin-left:auto; }
+.sf-ai-msg.bot span { background:#f1f1f1; color:#222; }
+.sf-ai-typing { display:none; font-size:12px; padding:6px 12px; color:#777; }
+.sf-ai-input { display:flex; border-top:1px solid #ddd; }
+.sf-ai-input input { flex:1; padding:10px; border:none; outline:none; font-size:14px; }
+.sf-ai-input button { background:#6c63ff; border:none; color:#fff; padding:10px 14px; cursor:pointer; font-size:14px; transition:all 0.2s; }
+.sf-ai-input button:hover { background:#574fcf; }
 
-                <!-- Popular Questions -->
-                <div id="portfolio-questions" class="bot-questions">
-                    <button onclick="sendMessage('Tell me about you')">About Me</button>
-                    <button onclick="sendMessage('Show me your skills')">My Skills</button>
-                    <button onclick="sendMessage('Show your projects')">Projects</button>
-                    <button onclick="sendMessage('Certificates')">Certificates</button>
-                    <button onclick="sendMessage('Contact information')">Contact</button>
-                </div>
+@media(max-width:480px){ .sf-ai-box { width:90vw; bottom:100px; } }
+</style>
 
-                <!-- Chat Body -->
-                <div id="portfolio-bot-body" class="bot-body"></div>
+<script>
+const btn = document.getElementById("sfAiToggle");
+const box = document.getElementById("sfAiBox");
+const closeBtn = document.getElementById("sfAiClose");
+const messages = document.getElementById("sfAiMessages");
+const input = document.getElementById("sfAiInput");
+const sendBtn = document.getElementById("sfAiSend");
+const typing = document.getElementById("sfAiTyping");
 
-                <!-- Input -->
-                <form id="portfolio-bot-input" class="bot-input">
-                    <input type="text" id="portfolio-user-message" placeholder="Ask me anything..." />
-                    <button type="submit">→</button>
-                </form>
-            </div>
+btn.onclick = () => box.style.display = "flex";
+closeBtn.onclick = () => box.style.display = "none";
 
-            <style>
-                /* Floating button */
-                .bot-button {
-                    position: fixed;
-                    bottom: 100px;
-                    right: 40px;
-                    width: 60px;
-                    height: 60px;
-                    border-radius: 50%;
-                    background: linear-gradient(45deg, #6c63ff, #9f7eff);
-                    color: #fff;
-                    border: none;
-                    font-size: 28px;
-                    cursor: pointer;
-                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-                    transition: transform 0.2s;
-                    z-index: 1000;
-                }
-                .bot-button:hover {
-                    transform: scale(1.1);
-                }
+// Auto-close on outside click
+document.addEventListener('click', function(e){
+  if(!box.contains(e.target) && e.target !== btn) box.style.display='none';
+});
 
-                /* Chat window */
-                .bot-window {
-                    position: fixed;
-                    bottom: 170px;
-                    right: 40px;
-                    width: 320px;
-                    background: #fff;
-                    border-radius: 16px;
-                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-                    display: none;
-                    flex-direction: column;
-                    font-family: Arial, sans-serif;
-                    overflow: hidden;
-                    z-index: 1000;
-                    opacity: 0;
-                    transform: translateY(20px);
-                    transition: all 0.3s;
-                }
+// Add message
+function addMsg(text,type){
+  const div = document.createElement("div");
+  div.className = "sf-ai-msg " + type;
+  div.innerHTML = `<span>${text}</span>`;
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+}
 
-                /* Header */
-                .bot-header {
-                    background: linear-gradient(90deg, #6c63ff, #9f7eff);
-                    color: #fff;
-                    padding: 12px;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-                .bot-title {
-                    font-weight: bold;
-                    font-size: 14px;
-                    display: flex;
-                    align-items: center;
-                    gap: 6px;
-                }
-                .online-dot {
-                    width: 8px;
-                    height: 8px;
-                    background: #00ff00;
-                    border-radius: 50%;
-                    display: inline-block;
-                    animation: pulse 1.2s infinite;
-                }
-                .close-btn {
-                    background: none;
-                    border: none;
-                    color: #fff;
-                    font-size: 18px;
-                    cursor: pointer;
-                }
+// Send to backend
+async function botReply(userText){
+  typing.style.display="block";
+  try{
+    const res = await fetch("http://localhost:3000/chat",{
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body: JSON.stringify({ message:userText })
+    });
+    const data = await res.json();
+    typing.style.display="none";
+    addMsg(data.reply,"bot");
+  }catch{
+    typing.style.display="none";
+    addMsg("Server error. Try again later.","bot");
+  }
+}
 
-                /* Questions */
-                .bot-questions {
-                    padding: 10px;
-                    background: #f5f5f5;
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 6px;
-                }
-                .bot-questions button {
-                    padding: 4px 10px;
-                    font-size: 12px;
-                    border-radius: 12px;
-                    border: 1px solid #6c63ff;
-                    background: #fff;
-                    cursor: pointer;
-                }
+// Send message
+sendBtn.onclick = ()=>{
+  if(!input.value.trim()) return;
+  addMsg(input.value,"user");
+  botReply(input.value);
+  input.value="";
+}
 
-                /* Chat body */
-                .bot-body {
-                    flex: 1;
-                    padding: 10px;
-                    overflow-y: auto;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 8px;
-                    max-height: 250px;
-                    background: #fff;
-                }
+// Enter key
+input.addEventListener("keypress",e=>{ if(e.key==="Enter") sendBtn.click(); });
 
-                /* Input */
-                .bot-input {
-                    display: flex;
-                    padding: 10px;
-                    border-top: 1px solid #ddd;
-                    background: #f9f9f9;
-                }
-                .bot-input input {
-                    flex: 1;
-                    padding: 8px 12px;
-                    border-radius: 50px;
-                    border: 1px solid #ccc;
-                    outline: none;
-                }
-                .bot-input button {
-                    margin-left: 6px;
-                    padding: 8px 12px;
-                    border-radius: 50%;
-                    border: none;
-                    background: #6c63ff;
-                    color: #fff;
-                    cursor: pointer;
-                }
+// Quick buttons
+function quick(q){ input.value=q; sendBtn.click(); }
 
-                /* Messages */
-                .bot-message {
-                    align-self: flex-start;
-                    background: linear-gradient(90deg, #6c63ff, #9f7eff);
-                    color: #fff;
-                    padding: 8px 12px;
-                    border-radius: 12px;
-                    max-width: 80%;
-                }
-                .user-message {
-                    align-self: flex-end;
-                    background: #6c63ff;
-                    color: #fff;
-                    padding: 8px 12px;
-                    border-radius: 12px;
-                    max-width: 80%;
-                }
+// Draggable bot
+let isDragging=false,offsetX,offsetY;
+const wrapper = document.getElementById('sfAiWrapper');
+wrapper.onmousedown=(e)=>{
+  if(e.target!==box && !box.contains(e.target)) return;
+  isDragging=true;
+  offsetX = e.clientX - wrapper.getBoundingClientRect().left;
+  offsetY = e.clientY - wrapper.getBoundingClientRect().top;
+}
+document.onmouseup=()=>isDragging=false;
+document.onmousemove=(e)=>{
+  if(!isDragging) return;
+  wrapper.style.left = (e.clientX - offsetX) + "px";
+  wrapper.style.top = (e.clientY - offsetY) + "px";
+};
+</script>
 
-                /* Animations */
-                @keyframes pulse {
-                    0% {
-                        transform: scale(1);
-                        opacity: 0.9;
-                    }
-                    50% {
-                        transform: scale(1.4);
-                        opacity: 0.5;
-                    }
-                    100% {
-                        transform: scale(1);
-                        opacity: 0.9;
-                    }
-                }
-            </style>
-
-            <script>
-                const botBtn = document.getElementById("portfolio-bot-btn");
-                const botWindow = document.getElementById("portfolio-bot");
-                const closeBtn = document.getElementById("close-portfolio-bot");
-                const chatBody = document.getElementById("portfolio-bot-body");
-                const chatForm = document.getElementById("portfolio-bot-input");
-                const userInput = document.getElementById("portfolio-user-message");
-
-                // Open/close bot
-                botBtn.addEventListener("click", () => {
-                    botWindow.style.display = "flex";
-                    setTimeout(() => {
-                        botWindow.style.opacity = 1;
-                        botWindow.style.transform = "translateY(0)";
-                    }, 10);
-                });
-                closeBtn.addEventListener("click", () => {
-                    botWindow.style.opacity = 0;
-                    botWindow.style.transform = "translateY(20px)";
-                    setTimeout(() => (botWindow.style.display = "none"), 300);
-                });
-
-                // Scroll helper
-                function scrollToBottom() {
-                    chatBody.scrollTop = chatBody.scrollHeight;
-                }
-                function sendMessage(msg) {
-                    userInput.value = msg;
-                    chatForm.dispatchEvent(new Event("submit"));
-                }
-
-                // Chat form submit
-                chatForm.addEventListener("submit", (e) => {
-                    e.preventDefault();
-                    const msg = userInput.value.trim();
-                    if (!msg) return;
-
-                    const userDiv = document.createElement("div");
-                    userDiv.textContent = msg;
-                    userDiv.className = "user-message";
-                    chatBody.appendChild(userDiv);
-                    userInput.value = "";
-                    scrollToBottom();
-
-                    const botDiv = document.createElement("div");
-                    botDiv.className = "bot-message";
-                    botDiv.innerHTML = "Typing...";
-                    chatBody.appendChild(botDiv);
-                    scrollToBottom();
-
-                    setTimeout(() => {
-                        botDiv.innerHTML = getBotResponse(msg);
-                        scrollToBottom();
-                    }, 800);
-                });
-
-                // Bot responses
-                function getBotResponse(msg) {
-                    const lower = msg.toLowerCase();
-                    if (lower.includes("hi") || lower.includes("hello") || lower.includes("hey"))
-                        return "Hello! 👋 I'm SinaFast AI. Ask me anything about my portfolio!";
-                    if (lower.includes("thanks") || lower.includes("thank you")) return "You're welcome! 😊";
-                    if (lower.includes("help") || lower.includes("support"))
-                        return "Sure! Ask me about my skills, projects, certificates, or contact info.";
-                    if (lower.includes("about") || lower.includes("yourself") || lower.includes("who are you"))
-                        return "Hi! I'm Sinachi Franklin Ezeonyeka, a Front-End Developer and Web Designer.";
-                    if (lower.includes("skills") || lower.includes("technologies") || lower.includes("stack"))
-                        return "I specialize in HTML, CSS, JavaScript, Bootstrap, and React.";
-                    if (lower.includes("projects") || lower.includes("portfolio") || lower.includes("work"))
-                        return "Check out my portfolio for projects like TrendyCart, K-Fabason, and more!";
-                    if (lower.includes("certificate") || lower.includes("certifications"))
-                        return "I have certificates in Web Development, UI/UX Design, and other tech skills.";
-                    if (lower.includes("contact") || lower.includes("email") || lower.includes("phone"))
-                        return "You can contact me at ezeonyekasinachi@gmail.com or +234 8063332087.";
-                    return "I’m here to help! Ask me about my skills, projects, certificates, or contact info.";
-                }
-            </script>
-        </main>
 
         <footer id="footer" class="footer light-background">
             <div class="container text-center">
