@@ -1764,8 +1764,7 @@
                 </div>
             </section>
             <!-- /Contact Section -->
-
-            <!-- Floating Share Button with Animated Links -->
+<!-- Floating Share Button with Animated Links -->
 <div class="floating-share-wrapper">
   <!-- Main floating button -->
   <a href="#" class="floating-share" id="share-btn" title="Share">
@@ -1774,45 +1773,32 @@
 
   <!-- Social links hidden by default -->
   <div class="share-links">
-                <a href="https://x.com/SinachiFra16993" class="twitter" title="Twitter" target="_blank"
-                    ><i class="bi bi-twitter-x"></i
-                ></a>
-                <a
-                    href="https://www.facebook.com/profile.php?id=61575225039124"
-                    class="facebook"
-                    title="Facebook"
-                    target="_blank"
-                    ><i class="bi bi-facebook"></i
-                ></a>
-                <a href="https://www.instagram.com/sinachi2016/" class="instagram" title="Instagram" target="_blank"
-                    ><i class="bi bi-instagram"></i
-                ></a>
-                <a href="https://github.com/Sinachi2" class="github" title="GitHub"
-                    ><i class="bi bi-github" target="_blank"></i
-                ></a>
-                <a
-                    href="https://www.linkedin.com/in/sinachi-franklin-ezeonyeka-581233373/"
-                    class="linkedin"
-                    title="LinkedIn"
-                    target="_blank"
-                    ><i class="bi bi-linkedin"></i
-                ></a>
-                <br>
-                <a
-                    href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=ezeonyekasinachi@gmail.com,%20ezeonyekasinachifranklin@gmail.com"
-                    class="email"
-                    title="Email"
-                    target="_blank"
-                    ><i class="bi bi-envelope"></i
-                ></a>
+    <a href="https://x.com/SinachiFra16993" class="twitter" title="Twitter" target="_blank">
+      <i class="bi bi-twitter-x"></i>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61575225039124" class="facebook" title="Facebook" target="_blank">
+      <i class="bi bi-facebook"></i>
+    </a>
+    <a href="https://www.instagram.com/sinachi2016/" class="instagram" title="Instagram" target="_blank">
+      <i class="bi bi-instagram"></i>
+    </a>
+    <a href="https://github.com/Sinachi2" class="github" title="GitHub" target="_blank">
+      <i class="bi bi-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/sinachi-franklin-ezeonyeka-581233373/" class="linkedin" title="LinkedIn" target="_blank">
+      <i class="bi bi-linkedin"></i>
+    </a>
+    <a href="mailto:ezeonyekasinachi@gmail.com,ezeonyeksinachifranklin@gmail.com" class="email" title="Email" target="_blank">
+      <i class="bi bi-envelope"></i>
+    </a>
   </div>
 </div>
 
-<!-- CSS -->
 <style>
+/* Wrapper raised higher */
 .floating-share-wrapper {
     position: fixed;
-    bottom: 40px;
+    bottom: 120px; /* raised higher */
     right: 40px;
     z-index: 1000;
     display: flex;
@@ -1832,7 +1818,7 @@
     align-items: center;
     font-size: 24px;
     box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
     margin-bottom: 10px;
 }
@@ -1850,15 +1836,23 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
-/* Show links when active */
-.share-links.active {
+/* Show links with stagger animation */
+.share-links.active a {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
+
+/* Staggered animation for each icon */
+.share-links.active a:nth-child(1){transition-delay:0.05s;}
+.share-links.active a:nth-child(2){transition-delay:0.10s;}
+.share-links.active a:nth-child(3){transition-delay:0.15s;}
+.share-links.active a:nth-child(4){transition-delay:0.20s;}
+.share-links.active a:nth-child(5){transition-delay:0.25s;}
+.share-links.active a:nth-child(6){transition-delay:0.30s;}
 
 /* Social link buttons */
 .share-links a {
@@ -1874,15 +1868,16 @@
     font-size: 20px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     transition: all 0.3s ease;
+    transform: translateY(20px);
+    opacity: 0;
 }
 
 .share-links a:hover {
-    transform: translateY(-3px) scale(1.1);
+    transform: translateY(-3px) scale(1.15);
     box-shadow: 0 10px 18px rgba(0,0,0,0.25);
 }
 </style>
 
-<!-- JS to toggle animated links -->
 <script>
 const shareBtn = document.getElementById('share-btn');
 const shareLinks = document.querySelector('.share-links');
@@ -1890,12 +1885,19 @@ const shareLinks = document.querySelector('.share-links');
 shareBtn.addEventListener('click', function(e){
     e.preventDefault();
     shareLinks.classList.toggle('active');
+
+    // Main button rotation when active
+    if(shareLinks.classList.contains('active')){
+        shareBtn.style.transform = 'rotate(45deg) scale(1.1)';
+    } else {
+        shareBtn.style.transform = 'rotate(0deg) scale(1)';
+    }
 });
 </script>
 
-<!-- Bootstrap Icons for social icons -->
+<!-- Bootstrap Icons -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-<!-- Floating Bot Button -->
+
 <button id="portfolio-bot-btn" class="bot-button">💬</button>
 
 <!-- Chat Window -->
