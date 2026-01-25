@@ -2057,7 +2057,24 @@
                                                     Thank you for submitting! We will get back to you shortly.
                                                 </div>
 
-                                                <button type="submit">Send Message</button>
+                                                <div class="col-md-12 text-center">
+    <div class="loading" style="display: none; margin-bottom: 15px;">Sending...</div>
+    <div class="error-message" style="display: none; color: #dc3545; margin-bottom: 15px;"></div>
+    <div class="sent-message" style="display: none; color: #198754; margin-bottom: 15px; font-weight: 600;">Your message has been sent. Thank you!</div>
+
+    <button type="submit" style="
+        background: #2563eb; 
+        color: #ffffff; 
+        border: 0; 
+        padding: 12px 40px; 
+        transition: 0.3s; 
+        border-radius: 50px; 
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+    " onmouseover="this.style.background='#1d4ed8'; this.style.transform='translateY(-2px)';" 
+       onmouseout="this.style.background='#2563eb'; this.style.transform='translateY(0)';"
+    >Send Message</button>
+</div>
                                             </div>
                                         </div>
                                     </form>
