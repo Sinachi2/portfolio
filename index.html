@@ -1945,10 +1945,10 @@
                     </script>
                 </div>
             </section>
-            <!-- FLOATING DARK MODE BUTTON -->
+<!-- FLOATING DARK MODE BUTTON -->
 <button id="themeToggle" class="theme-float-btn" aria-label="Toggle dark mode">
-  🌙
-  <span class="tooltip-text">Ctrl + Shift + S</span>
+  <span class="icon">🌙</span>
+  <span class="tooltip-text">Ctrl + Shift + D</span>
 </button>
 
 <style>
@@ -1963,7 +1963,6 @@
   border: none;
   background: #1e40af;
   color: #fff;
-  font-size: 1.4rem;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
   display: flex;
@@ -1972,28 +1971,34 @@
   z-index: 9999;
 }
 
-/* Tooltip */
+.theme-float-btn .icon {
+  font-size: 1.35rem;
+}
+
+/* Tooltip (RIGHT side, no arrow) */
 .theme-float-btn .tooltip-text {
   position: absolute;
-  left: 60px;
-  background: #020617;
+  left: 68px;
+  background: rgba(2, 6, 23, 0.95);
   color: #fff;
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 6px;
   font-size: 0.75rem;
+  font-weight: 500;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transform: translateX(-5px);
-  transition: all 0.25s ease;
+  transform: translateX(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
+/* Show tooltip on hover */
 .theme-float-btn:hover .tooltip-text {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* DARK MODE STYLES */
+/* Dark mode styles */
 body.dark-mode {
   background-color: #0f172a;
   color: #e5e7eb;
@@ -2010,28 +2015,27 @@ body.dark-mode footer {
 
 <script>
 const toggleBtn = document.getElementById("themeToggle");
+const iconSpan = toggleBtn.querySelector(".icon");
 
-function toggleTheme() {
-  document.body.classList.toggle("dark-mode");
-  const isDark = document.body.classList.contains("dark-mode");
-  toggleBtn.firstChild.textContent = isDark ? "☀️" : "🌙";
+function setTheme(isDark) {
+  document.body.classList.toggle("dark-mode", isDark);
+  iconSpan.textContent = isDark ? "☀️" : "🌙";
   localStorage.setItem("theme", isDark ? "dark" : "light");
 }
 
 // Load saved theme
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark-mode");
-  toggleBtn.firstChild.textContent = "☀️";
-}
+setTheme(localStorage.getItem("theme") === "dark");
 
 // Click toggle
-toggleBtn.addEventListener("click", toggleTheme);
+toggleBtn.addEventListener("click", () => {
+  setTheme(!document.body.classList.contains("dark-mode"));
+});
 
-// Keyboard shortcut: Ctrl + Shift + S
+// Keyboard shortcut: Ctrl + Shift + D
 document.addEventListener("keydown", (e) => {
-  if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "s") {
+  if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "d") {
     e.preventDefault();
-    toggleTheme();
+    setTheme(!document.body.classList.contains("dark-mode"));
   }
 });
 </script>
