@@ -178,7 +178,7 @@
     <body class="index-page">
 
 
-        <!-- Floating Hire Me / Get a Quote Card -->
+<!-- Floating Hire Me / Get a Quote Card -->
 <div id="hireMeCard">
   <div id="hireMeTab">💼 Hire Me</div>
   <div id="hireMePanel">
@@ -233,7 +233,7 @@
 #hireMeCard {
   position: fixed;
   right: 20px;
-  top: 50%;
+  top: 40%; /* moved up a little from center */
   transform: translateY(-50%);
   z-index: 9999;
   font-family: Arial, sans-serif;
@@ -385,7 +385,15 @@ const hireTab = document.getElementById('hireMeTab');
 const hirePanel = document.getElementById('hireMePanel');
 const hireClose = document.getElementById('hireMeClose');
 
-hireTab.addEventListener('click', () => hirePanel.classList.add('active'));
+function openPanel() {
+  hirePanel.classList.add('active');
+  // auto-close after 7 seconds
+  setTimeout(() => {
+    hirePanel.classList.remove('active');
+  }, 7000);
+}
+
+hireTab.addEventListener('click', openPanel);
 hireClose.addEventListener('click', () => hirePanel.classList.remove('active'));
 
 // Toggle tabs inside panel
@@ -416,7 +424,7 @@ copyBtns.forEach(btn => {
 const hmForm = document.getElementById('hmForm');
 
 hmForm.addEventListener('submit', function(e) {
-  e.preventDefault(); // prevent default submit
+  e.preventDefault();
   const formData = new FormData(hmForm);
   fetch(hmForm.action, {
     method: 'POST',
@@ -435,14 +443,9 @@ hmForm.addEventListener('submit', function(e) {
 });
 
 // GSAP Animations
-// 1. Subtle bounce for attention
 gsap.to("#hireMeTab", {y: -6, repeat: -1, yoyo: true, ease: "power1.inOut", duration: 1.2});
-
-// 2. Hover scale
 hireTab.addEventListener('mouseenter', () => gsap.to("#hireMeTab", {scale:1.1, duration:0.2}));
 hireTab.addEventListener('mouseleave', () => gsap.to("#hireMeTab", {scale:1, duration:0.2}));
-
-// 3. Panel entrance animation on load
 gsap.from("#hireMeCard", {x: 50, opacity: 0, duration: 1, ease: "power2.out"});
 </script>
 
