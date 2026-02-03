@@ -27,28 +27,18 @@
     </style>
 </head>
 <body>
-      <!-- Header -->
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <div class="profile-img">
-      <img src="assets/img/sinachi.jpeg" alt="Sinachi Franklin Ezeonyeka" class="img-fluid rounded-circle">
+        <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0" id="project-title">Service Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current" id="breadcrumb-title">Service Details</li>
+          </ol>
+        </nav>
+      </div>
     </div>
-
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <h1 class="sitename">SinaFast</h1>
-    </a>
-
-    <div class="social-links text-center">
-      <a href="https://x.com/SinachiFra16993" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=61575225039124" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
-      <a href="https://www.instagram.com/sinachi2016/" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
-      <a href="https://github.com/Sinachi2" class="github" target="_blank"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/sinachi-franklin-ezeonyeka-581233373/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
-    </div>
-  </header>
-
-
     <section class="page-header">
         <div class="container">
             <h1 class="fw-bold">Service Details</h1>
@@ -59,7 +49,12 @@
     <section class="p-4 p-md-5">
         <div class="container">
             <div class="row">
-
+                <!-- Sidebar -->
+                <div class="col-lg-4 col-xl-3 mb-4">
+                    <div class="list-group category-nav" id="service-menu">
+                        <!-- Dynamically filled -->
+                    </div>
+                </div>
                 <!-- Main Panel -->
                 <div class="col-lg-8 col-xl-9">
                     <div class="content-card" id="main-panel">
