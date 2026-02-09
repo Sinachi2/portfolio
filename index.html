@@ -178,276 +178,6 @@
     <body class="index-page">
 
 
-<!-- Floating Hire Me / Get a Quote Card -->
-<div id="hireMeCard">
-  <div id="hireMeTab">💼 Hire Me</div>
-  <div id="hireMePanel">
-    <div id="hireMeHeader">
-      <span>Get a Quote / Hire Me</span>
-      <span id="hireMeClose">&times;</span>
-    </div>
-    <div id="hireMeContent">
-      <!-- Toggle Buttons -->
-      <div id="hireMeToggle">
-        <button class="active" data-tab="contact">Contact Form</button>
-        <button data-tab="payment">Payment</button>
-      </div>
-
-      <!-- Contact Form -->
-      <div class="hireTab" id="contactTab">
-        <form
-          action="https://formspree.io/f/mbdkvynj"
-          method="POST"
-          id="hmForm"
-        >
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-
-      <!-- Payment Info -->
-      <div class="hireTab" id="paymentTab" style="display:none;">
-        <h4>Bank Transfer</h4>
-        <p>Bank: Fidelity Bank</p>
-        <p>Name: SINACHI FRANKLIN EZEONYEKA</p>
-        <p>Account: 6152779644 
-          <button class="copyBtn" data-copy="6152779644">Copy</button>
-        </p>
-
-        <h4>USDT (BEP20)</h4>
-        <p>Wallet: <span id="usdtWallet">0x689dc021f5b7ed12883a401addc45fff7f279c19</span> 
-          <button class="copyBtn" data-copy="0x689dc021f5b7ed12883a401addc45fff7f279c19">Copy</button>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- GSAP Library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.0/gsap.min.js"></script>
-
-<style>
-/* Container */
-#hireMeCard {
-  position: fixed;
-  right: 20px;
-  top: 40%; /* moved up a little from center */
-  transform: translateY(-50%);
-  z-index: 9999;
-  font-family: Arial, sans-serif;
-  pointer-events: auto;
-}
-
-/* Floating Tab */
-#hireMeTab {
-  background: linear-gradient(135deg,#0d6efd,#0b5ed7);
-  color: #fff;
-  padding: 12px 18px;
-  border-radius: 50px 0 0 50px;
-  cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-  font-weight: bold;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-}
-#hireMeTab:hover {
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-}
-
-/* Panel */
-#hireMePanel {
-  width: 320px;
-  max-width: 90vw;
-  background: #fff;
-  color: #000;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-  border-radius: 12px;
-  overflow: hidden;
-  position: absolute;
-  right: 70px;
-  top: 0;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(30px);
-  transition: opacity 0.4s, transform 0.4s;
-}
-#hireMePanel.active {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(0);
-}
-
-/* Panel Header */
-#hireMeHeader {
-  background: linear-gradient(135deg,#0d6efd,#0b5ed7);
-  color: #fff;
-  padding: 12px 18px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-}
-#hireMeClose {
-  cursor: pointer;
-  font-size: 22px;
-  transition: transform 0.2s;
-}
-#hireMeClose:hover {
-  transform: rotate(90deg);
-}
-
-/* Panel Content */
-#hireMeContent {
-  padding: 15px;
-}
-
-/* Toggle Buttons */
-#hireMeToggle {
-  display: flex;
-  gap: 5px;
-  margin-bottom: 12px;
-}
-#hireMeToggle button {
-  flex: 1;
-  padding: 8px 12px;
-  border: none;
-  cursor: pointer;
-  border-radius: 6px;
-  background: #e9ecef;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-#hireMeToggle button.active {
-  background: #0d6efd;
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-/* Contact Form */
-#contactTab input, #contactTab textarea {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  resize: none;
-  transition: all 0.2s ease;
-}
-#contactTab input:focus, #contactTab textarea:focus {
-  border-color: #0d6efd;
-  box-shadow: 0 0 5px rgba(13,110,253,0.4);
-  outline: none;
-}
-#contactTab button {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  background: linear-gradient(135deg,#0d6efd,#0b5ed7);
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-#contactTab button:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-}
-
-/* Payment Tab */
-#paymentTab h4 {
-  margin-top: 12px;
-  color: #0d6efd;
-}
-.copyBtn {
-  padding: 4px 8px;
-  font-size: 12px;
-  margin-left: 5px;
-  cursor: pointer;
-  border: none;
-  background: linear-gradient(135deg,#0d6efd,#0b5ed7);
-  color: #fff;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-.copyBtn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-</style>
-
-<script>
-// Toggle panel open/close
-const hireTab = document.getElementById('hireMeTab');
-const hirePanel = document.getElementById('hireMePanel');
-const hireClose = document.getElementById('hireMeClose');
-
-function openPanel() {
-  hirePanel.classList.add('active');
-  // auto-close after 7 seconds
-  setTimeout(() => {
-    hirePanel.classList.remove('active');
-  }, 7000);
-}
-
-hireTab.addEventListener('click', openPanel);
-hireClose.addEventListener('click', () => hirePanel.classList.remove('active'));
-
-// Toggle tabs inside panel
-const toggleButtons = document.querySelectorAll('#hireMeToggle button');
-const hireTabs = document.querySelectorAll('.hireTab');
-
-toggleButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    toggleButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    hireTabs.forEach(tab => tab.style.display = 'none');
-    document.getElementById(btn.dataset.tab + 'Tab').style.display = 'block';
-  });
-});
-
-// Copy to clipboard for payment info
-const copyBtns = document.querySelectorAll('.copyBtn');
-copyBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const text = btn.dataset.copy;
-    navigator.clipboard.writeText(text);
-    btn.textContent = 'Copied!';
-    setTimeout(() => btn.textContent = 'Copy', 1500);
-  });
-});
-
-// Formspree submission
-const hmForm = document.getElementById('hmForm');
-
-hmForm.addEventListener('submit', function(e) {
-  e.preventDefault();
-  const formData = new FormData(hmForm);
-  fetch(hmForm.action, {
-    method: 'POST',
-    body: formData,
-    headers: { 'Accept': 'application/json' }
-  })
-  .then(response => {
-    if (response.ok) {
-      alert('Message sent successfully!');
-      hmForm.reset();
-    } else {
-      alert('Oops! There was a problem submitting your form.');
-    }
-  })
-  .catch(() => alert('Oops! There was a problem submitting your form.'));
-});
-
-// GSAP Animations
-gsap.to("#hireMeTab", {y: -6, repeat: -1, yoyo: true, ease: "power1.inOut", duration: 1.2});
-hireTab.addEventListener('mouseenter', () => gsap.to("#hireMeTab", {scale:1.1, duration:0.2}));
-hireTab.addEventListener('mouseleave', () => gsap.to("#hireMeTab", {scale:1, duration:0.2}));
-gsap.from("#hireMeCard", {x: 50, opacity: 0, duration: 1, ease: "power2.out"});
-</script>
 
         <header id="header" class="header dark-background d-flex flex-column">
             <i class="header-toggle d-xl-none bi bi-list"></i>
@@ -1607,7 +1337,49 @@ gsap.from("#hireMeCard", {x: 50, opacity: 0, duration: 1, ease: "power2.out"});
                 </div>
             </section>
             <!-- /Portfolio Section -->
+<section id="blog-preview" class="container py-5">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">From the Blog</h2>
+    <p class="text-muted">Short reads on performance and modern web practices.</p>
+  </div>
 
+  <div class="row g-4">
+
+    <!-- Article Preview 1 -->
+    <div class="col-md-6">
+      <article class="border rounded p-4 h-100">
+        <h3 class="h6 fw-bold">
+          Why Performance Matters
+        </h3>
+        <p class="text-muted small mb-2">
+          How website speed affects user experience, SEO, and conversions.
+        </p>
+        <a href="blog/performance-matters.html" class="text-decoration-none fw-semibold">
+          Read more →
+        </a>
+      </article>
+    </div>
+
+    <!-- Article Preview 2 -->
+    <div class="col-md-6">
+      <article class="border rounded p-4 h-100">
+        <h3 class="h6 fw-bold">
+          Front-End Performance Optimization
+        </h3>
+        <p class="text-muted small mb-2">
+          My approach to building fast, optimized, and scalable front-end interfaces.
+        </p>
+        <a href="blog/performance-matters.html#optimization" class="text-decoration-none fw-semibold">
+          Read more →
+        </a>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+
+            
 <!-- Services Section -->
 <section id="services" class="services section">
     <div class="container section-title" data-aos="fade-up">
