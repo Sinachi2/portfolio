@@ -8,7 +8,697 @@
             .cta-group {
     align-items: center;
 }
+/* =========================================================
+   SINaFAST PREMIUM CONTACT SECTION
+   HTML UNCHANGED
+   ========================================================= */
 
+#contact {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+
+/* Background glow */
+
+#contact::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    top: -220px;
+    right: -180px;
+
+    background: radial-gradient(
+        circle,
+        rgba(13, 110, 253, 0.12),
+        transparent 70%
+    );
+
+    pointer-events: none;
+}
+
+#contact::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    bottom: -200px;
+    left: -180px;
+
+    background: radial-gradient(
+        circle,
+        rgba(111, 66, 193, 0.10),
+        transparent 70%
+    );
+
+    pointer-events: none;
+}
+
+
+/* Keep content above background */
+
+#contact > .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   CONTACT TITLE
+   ========================================================= */
+
+#contact .section-title h2 {
+    font-weight: 800;
+    letter-spacing: -1px;
+    position: relative;
+    display: inline-block;
+}
+
+#contact .section-title h2::after {
+    content: "";
+    display: block;
+
+    width: 60px;
+    height: 4px;
+
+    margin: 12px auto 0;
+
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        #0d6efd,
+        #6f42c1,
+        #d63384
+    );
+
+    box-shadow:
+        0 0 12px rgba(13, 110, 253, 0.35);
+}
+
+#contact .section-title p {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTACT INFORMATION PANEL
+   ========================================================= */
+
+#contact .info-wrap {
+    height: 100%;
+
+    padding: 35px 30px;
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.96),
+            rgba(248,250,255,0.92)
+        );
+
+    border: 1px solid rgba(13, 110, 253, 0.09);
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.07);
+
+    backdrop-filter: blur(15px);
+
+    transition:
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
+}
+
+#contact .info-wrap:hover {
+    box-shadow:
+        0 25px 70px rgba(13, 110, 253, 0.13);
+}
+
+
+/* =========================================================
+   INFORMATION ITEMS
+   ========================================================= */
+
+#contact .info-item {
+    position: relative;
+
+    padding: 17px 15px;
+
+    margin-bottom: 8px;
+
+    border-radius: 17px;
+
+    transition:
+        background 0.35s ease,
+        transform 0.35s ease;
+}
+
+#contact .info-item:hover {
+    background: rgba(13, 110, 253, 0.055);
+
+    transform: translateX(6px);
+}
+
+
+/* Icons */
+
+#contact .info-item > i {
+    width: 52px;
+    height: 52px;
+
+    min-width: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    color: #ffffff;
+
+    font-size: 21px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d6efd,
+            #6f42c1
+        );
+
+    box-shadow:
+        0 9px 24px rgba(13, 110, 253, 0.22);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+#contact .info-item:hover > i {
+    transform:
+        scale(1.08)
+        rotate(-5deg);
+
+    box-shadow:
+        0 12px 30px rgba(111, 66, 193, 0.30);
+}
+
+
+/* Information headings */
+
+#contact .info-item h3 {
+    margin: 0 0 5px;
+
+    font-size: 17px;
+
+    font-weight: 750;
+
+    color: #172033;
+}
+
+
+/* Information text */
+
+#contact .info-item p {
+    margin: 0;
+
+    color: #667085;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   GOOGLE MAP
+   ========================================================= */
+
+#contact .info-wrap iframe {
+    width: 100% !important;
+
+    height: 260px !important;
+
+    display: block;
+
+    margin-top: 25px;
+
+    border: 0 !important;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.10);
+
+    filter: saturate(0.9);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+#contact .info-wrap iframe:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 40px rgba(13, 110, 253, 0.15);
+}
+
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
+#contact .php-email-form {
+    height: 100%;
+
+    padding: 38px 35px;
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.98),
+            rgba(248,250,255,0.95)
+        );
+
+    border: 1px solid rgba(13, 110, 253, 0.09);
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.07);
+
+    transition:
+        box-shadow 0.4s ease;
+}
+
+#contact .php-email-form:hover {
+    box-shadow:
+        0 25px 70px rgba(13, 110, 253, 0.12);
+}
+
+
+/* =========================================================
+   FORM LABELS
+   ========================================================= */
+
+#contact .php-email-form label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    color: #344054;
+}
+
+
+/* =========================================================
+   FORM INPUTS
+   ========================================================= */
+
+#contact .php-email-form .form-control {
+    width: 100%;
+
+    min-height: 52px;
+
+    padding: 13px 16px;
+
+    border-radius: 13px;
+
+    border: 1px solid #e1e6ef;
+
+    background: #ffffff;
+
+    color: #172033;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.025);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Textarea */
+
+#contact .php-email-form textarea.form-control {
+    min-height: 190px;
+
+    resize: vertical;
+}
+
+
+/* Focus */
+
+#contact .php-email-form .form-control:focus {
+    border-color: #0d6efd;
+
+    outline: none;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 0 4px rgba(13, 110, 253, 0.10),
+        0 10px 25px rgba(13, 110, 253, 0.07);
+}
+
+
+/* Placeholder */
+
+#contact .php-email-form .form-control::placeholder {
+    color: #98a2b3;
+}
+
+
+/* =========================================================
+   SEND BUTTON
+   ========================================================= */
+
+#contact .php-email-form button[type="submit"] {
+    position: relative;
+
+    min-width: 190px;
+
+    padding: 14px 28px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d6efd,
+            #6f42c1
+        );
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 28px rgba(13, 110, 253, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Button shine */
+
+#contact .php-email-form button[type="submit"]::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.30),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.6s ease;
+}
+
+#contact .php-email-form button[type="submit"]:hover::before {
+    left: 130%;
+}
+
+
+/* Button hover */
+
+#contact .php-email-form button[type="submit"]:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 38px rgba(13, 110, 253, 0.32);
+}
+
+
+/* Button active */
+
+#contact .php-email-form button[type="submit"]:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+#contact .loading {
+    color: #667085;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+#contact .spinner {
+    display: inline-block;
+
+    width: 18px;
+    height: 18px;
+
+    margin-right: 8px;
+
+    border: 3px solid rgba(13, 110, 253, 0.20);
+
+    border-top-color: #0d6efd;
+
+    border-radius: 50%;
+
+    vertical-align: middle;
+
+    animation:
+        contactSpin 0.8s linear infinite;
+}
+
+@keyframes contactSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+
+#contact .error-message {
+    padding: 12px 15px;
+
+    border-radius: 12px;
+
+    background: rgba(220, 53, 69, 0.08);
+
+    border: 1px solid rgba(220, 53, 69, 0.15);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+   ========================================================= */
+
+#contact .sent-message {
+    padding: 13px 16px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #198754,
+            #20c997
+        );
+
+    color: #ffffff !important;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 25px rgba(25, 135, 84, 0.20);
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+[data-theme="dark"] #contact .info-wrap,
+[data-theme="dark"] #contact .php-email-form,
+.dark-mode #contact .info-wrap,
+.dark-mode #contact .php-email-form {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,31,45,0.97),
+            rgba(15,20,32,0.97)
+        );
+
+    border-color: rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.30);
+}
+
+[data-theme="dark"] #contact .info-item h3,
+.dark-mode #contact .info-item h3 {
+    color: #ffffff;
+}
+
+[data-theme="dark"] #contact .info-item p,
+[data-theme="dark"] #contact .php-email-form label,
+.dark-mode #contact .info-item p,
+.dark-mode #contact .php-email-form label {
+    color: #b7c0d0;
+}
+
+[data-theme="dark"] #contact .php-email-form .form-control,
+.dark-mode #contact .php-email-form .form-control {
+    background: #111827;
+
+    border-color: rgba(255,255,255,0.10);
+
+    color: #ffffff;
+}
+
+[data-theme="dark"] #contact .php-email-form .form-control::placeholder,
+.dark-mode #contact .php-email-form .form-control::placeholder {
+    color: #7d8798;
+}
+
+[data-theme="dark"] #contact .info-item:hover,
+.dark-mode #contact .info-item:hover {
+    background: rgba(13,110,253,0.08);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    #contact {
+        padding: 80px 0;
+    }
+
+    #contact .info-wrap,
+    #contact .php-email-form {
+        padding: 30px 25px;
+    }
+
+    #contact .info-wrap iframe {
+        height: 300px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+    #contact {
+        padding: 70px 0;
+    }
+
+    #contact .info-wrap,
+    #contact .php-email-form {
+        padding: 25px 20px;
+
+        border-radius: 20px;
+    }
+
+    #contact .info-item {
+        padding: 14px 8px;
+    }
+
+    #contact .info-item > i {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+
+        border-radius: 13px;
+
+        font-size: 19px;
+    }
+
+    #contact .info-item h3 {
+        font-size: 16px;
+    }
+
+    #contact .info-item p {
+        font-size: 13px;
+    }
+
+    #contact .info-wrap iframe {
+        height: 230px !important;
+
+        border-radius: 16px;
+    }
+
+    #contact .php-email-form {
+        padding: 25px 18px;
+    }
+
+    #contact .php-email-form .form-control {
+        min-height: 50px;
+    }
+
+    #contact .php-email-form textarea.form-control {
+        min-height: 160px;
+    }
+
+    #contact .php-email-form button[type="submit"] {
+        width: 100%;
+
+        min-width: 0;
+    }
+}
 .cta-btn {
     position: relative;
     display: inline-flex;
