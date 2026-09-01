@@ -1,86 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Hire Me | SinaFast</title>
-    <meta name="description" content="Hire SinaFast for professional website development, UI/UX design, graphics design, e-commerce and digital solutions.">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
     <style>
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
             background: #080808;
-            color: #fff;
+            color: white;
             min-height: 100vh;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* NAVBAR */
         nav {
-            width: 100%;
-            padding: 20px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(8, 8, 8, 0.95);
-            border-bottom: 1px solid rgba(255, 0, 0, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+
+            padding: 20px 7%;
+
+            background: #090909;
+
+            border-bottom: 1px solid #252525;
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: 800;
             color: #ff2020;
-            text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+            font-size: 28px;
+            font-weight: bold;
         }
 
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+        .back {
             padding: 10px 18px;
+
             border: 1px solid #ff2020;
-            border-radius: 25px;
-            color: #fff;
-            transition: 0.3s;
+            border-radius: 30px;
         }
 
-        .back-btn:hover {
-            background: #ff2020;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-        }
-
-        /* HERO */
         .hero {
             text-align: center;
-            padding: 80px 20px 50px;
+            padding: 70px 20px 45px;
         }
 
         .hero i {
-            font-size: 55px;
             color: #ff2020;
+            font-size: 55px;
             margin-bottom: 20px;
-            text-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
         }
 
         .hero h1 {
@@ -88,60 +68,70 @@
             margin-bottom: 15px;
         }
 
-        .hero h1 span {
+        .hero span {
             color: #ff2020;
         }
 
         .hero p {
             max-width: 700px;
             margin: auto;
-            color: #bbb;
+
+            color: #999;
             line-height: 1.7;
-            font-size: 17px;
         }
 
-        /* CONTAINER */
         .container {
-            width: min(1100px, 92%);
+            width: min(1050px, 92%);
             margin: auto;
             padding-bottom: 80px;
         }
 
-        /* SERVICES */
-        .section-title {
+        .title {
             text-align: center;
-            margin: 30px 0;
+            margin: 35px 0;
         }
 
-        .section-title h2 {
+        .title h2 {
             font-size: 30px;
         }
 
-        .section-title span {
+        .title span {
             color: #ff2020;
         }
 
         .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(210px, 1fr));
+
             gap: 18px;
-            margin-bottom: 55px;
+
+            margin-bottom: 60px;
         }
 
         .service {
-            background: #111;
-            border: 1px solid #242424;
             padding: 25px;
-            border-radius: 15px;
+
+            background: #111;
+
+            border: 1px solid #292929;
+
+            border-radius: 16px;
+
             cursor: pointer;
+
             transition: 0.3s;
         }
 
         .service:hover,
         .service.selected {
             border-color: #ff2020;
+
             transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.15);
+
+            box-shadow:
+                0 0 25px rgba(255, 32, 32, .15);
         }
 
         .service i {
@@ -155,26 +145,29 @@
         }
 
         .service p {
-            color: #999;
+            color: #888;
             font-size: 14px;
-            line-height: 1.5;
         }
 
-        /* FORM */
         .form-box {
-            background: #101010;
-            border: 1px solid #252525;
+            background: #111;
+
+            border: 1px solid #292929;
+
             border-radius: 20px;
+
             padding: 35px;
         }
 
-        .form-grid {
+        .grid {
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 20px;
         }
 
-        .form-group {
+        .group {
             display: flex;
             flex-direction: column;
             gap: 8px;
@@ -185,81 +178,149 @@
         }
 
         label {
-            font-weight: 600;
             font-size: 14px;
+            font-weight: bold;
+        }
+
+        label span {
+            color: #ff2020;
         }
 
         input,
         select,
         textarea {
             width: 100%;
-            padding: 14px 15px;
+
+            padding: 14px;
+
             background: #080808;
+
+            color: white;
+
             border: 1px solid #333;
+
             border-radius: 10px;
-            color: #fff;
+
             outline: none;
+
             font-size: 15px;
-            transition: 0.3s;
         }
 
         input:focus,
         select:focus,
         textarea:focus {
             border-color: #ff2020;
-            box-shadow: 0 0 12px rgba(255, 0, 0, 0.12);
         }
 
         textarea {
-            min-height: 150px;
+            min-height: 170px;
             resize: vertical;
         }
 
-        /* BUTTON */
-        .submit-btn {
+        .upload {
+            padding: 20px;
+
+            background: #090909;
+
+            border: 1px dashed #444;
+
+            border-radius: 12px;
+        }
+
+        .upload i {
+            color: #ff2020;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .upload p {
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        button {
             width: 100%;
+
             margin-top: 25px;
+
             padding: 16px;
+
             border: none;
+
             border-radius: 10px;
+
             background: #ff2020;
-            color: #fff;
+
+            color: white;
+
             font-size: 17px;
+
             font-weight: bold;
+
             cursor: pointer;
-            transition: 0.3s;
         }
 
-        .submit-btn:hover {
+        button:hover {
             background: #e00000;
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.45);
-            transform: translateY(-2px);
         }
 
-        .submit-btn i {
-            margin-right: 8px;
+        button:disabled {
+            opacity: .6;
+            cursor: not-allowed;
         }
 
-        /* FOOTER */
-        footer {
+        #status {
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
             text-align: center;
+
+            line-height: 1.5;
+        }
+
+        .success {
+            display: block !important;
+
+            background: rgba(0, 200, 80, .1);
+
+            border: 1px solid #168f48;
+
+            color: #7dffae;
+        }
+
+        .error {
+            display: block !important;
+
+            background: rgba(255, 0, 0, .1);
+
+            border: 1px solid #ff2020;
+
+            color: #ff8585;
+        }
+
+        footer {
             padding: 25px;
+
+            text-align: center;
+
+            color: #666;
+
             border-top: 1px solid #222;
-            color: #777;
-            font-size: 14px;
         }
 
         footer span {
             color: #ff2020;
         }
 
-        /* MOBILE */
-        @media (max-width: 700px) {
-            nav {
-                padding: 17px 5%;
-            }
+        @media(max-width:700px) {
 
-            .form-grid {
+            .grid {
                 grid-template-columns: 1fr;
             }
 
@@ -271,265 +332,791 @@
                 padding: 22px;
             }
 
-            .hero {
-                padding-top: 55px;
+            nav {
+                padding: 16px 5%;
             }
 
-            .back-btn {
-                padding: 8px 13px;
-            }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <a href="index.html" class="logo">SinaFast</a>
 
-        <a href="index.html" class="back-btn">
-            <i class="fas fa-arrow-left"></i>
-            Back to Portfolio
-        </a>
-    </nav>
+<nav>
+
+    <a href="index.html" class="logo">
+        SinaFast
+    </a>
+
+    <a href="index.html" class="back">
+        <i class="fas fa-arrow-left"></i>
+        Back
+    </a>
+
+</nav>
 
 
-    <!-- HERO -->
-    <section class="hero">
+<section class="hero">
 
-        <i class="fas fa-briefcase"></i>
+    <i class="fas fa-rocket"></i>
 
-        <h1>Let's <span>Work Together</span></h1>
+    <h1>
+        Let's <span>Work Together</span>
+    </h1>
+
+    <p>
+        Have a website, application, design, online store,
+        or digital project in mind?
+        Tell me about it and let's build something amazing.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+<div class="title">
+
+    <h2>
+        What Do <span>You Need?</span>
+    </h2>
+
+</div>
+
+
+<div class="services">
+
+
+    <div
+        class="service"
+        data-service="Website Development"
+    >
+
+        <i class="fas fa-code"></i>
+
+        <h3>Website Development</h3>
 
         <p>
-            Have a website, application, design or digital project in mind?
-            Tell me what you need and let's turn your idea into something
-            professional, modern and functional.
+            Modern, responsive and fast websites.
         </p>
 
-    </section>
+    </div>
 
 
-    <main class="container">
+    <div
+        class="service"
+        data-service="UI/UX Design"
+    >
 
-        <!-- SERVICES -->
-        <div class="section-title">
-            <h2>What Do You <span>Need?</span></h2>
+        <i class="fas fa-pen-ruler"></i>
+
+        <h3>UI/UX Design</h3>
+
+        <p>
+            Clean and user-friendly interface designs.
+        </p>
+
+    </div>
+
+
+    <div
+        class="service"
+        data-service="Graphics Design"
+    >
+
+        <i class="fas fa-palette"></i>
+
+        <h3>Graphics Design</h3>
+
+        <p>
+            Professional graphics and branding.
+        </p>
+
+    </div>
+
+
+    <div
+        class="service"
+        data-service="E-Commerce"
+    >
+
+        <i class="fas fa-cart-shopping"></i>
+
+        <h3>E-Commerce</h3>
+
+        <p>
+            Online stores and shopping systems.
+        </p>
+
+    </div>
+
+
+    <div
+        class="service"
+        data-service="Web Maintenance"
+    >
+
+        <i class="fas fa-screwdriver-wrench"></i>
+
+        <h3>Web Maintenance</h3>
+
+        <p>
+            Website fixes and improvements.
+        </p>
+
+    </div>
+
+
+    <div
+        class="service"
+        data-service="Other"
+    >
+
+        <i class="fas fa-lightbulb"></i>
+
+        <h3>Other</h3>
+
+        <p>
+            Tell me about your idea.
+        </p>
+
+    </div>
+
+
+</div>
+
+
+<div class="title">
+
+    <h2>
+        Project <span>Details</span>
+    </h2>
+
+</div>
+
+
+<div class="form-box">
+
+
+<form id="hireForm" novalidate>
+
+
+<div class="grid">
+
+
+    <!-- NAME -->
+
+    <div class="group">
+
+        <label>
+            Full Name <span>*</span>
+        </label>
+
+        <input
+            type="text"
+            name="fullName"
+            id="fullName"
+            placeholder="Your full name"
+            required
+        >
+
+    </div>
+
+
+    <!-- EMAIL -->
+
+    <div class="group">
+
+        <label>
+            Email Address <span>*</span>
+        </label>
+
+        <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="you@example.com"
+            required
+        >
+
+    </div>
+
+
+    <!-- PHONE -->
+
+    <div class="group">
+
+        <label>
+            Phone / WhatsApp
+        </label>
+
+        <input
+            type="tel"
+            name="phone"
+            id="phone"
+            placeholder="+234..."
+        >
+
+    </div>
+
+
+    <!-- COUNTRY -->
+
+    <div class="group">
+
+        <label>
+            Country
+        </label>
+
+        <input
+            type="text"
+            name="country"
+            id="country"
+            placeholder="Nigeria"
+        >
+
+    </div>
+
+
+    <!-- SERVICE -->
+
+    <div class="group">
+
+        <label>
+            Service <span>*</span>
+        </label>
+
+        <select
+            name="service"
+            id="service"
+            required
+        >
+
+            <option value="">
+                Select a service
+            </option>
+
+            <option value="Website Development">
+                Website Development
+            </option>
+
+            <option value="UI/UX Design">
+                UI/UX Design
+            </option>
+
+            <option value="Graphics Design">
+                Graphics Design
+            </option>
+
+            <option value="E-Commerce">
+                E-Commerce
+            </option>
+
+            <option value="Web Maintenance">
+                Web Maintenance
+            </option>
+
+            <option value="Other">
+                Other
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- BUDGET -->
+
+    <div class="group">
+
+        <label>
+            Estimated Budget
+        </label>
+
+        <select
+            name="budget"
+            id="budget"
+        >
+
+            <option value="">
+                Select budget
+            </option>
+
+            <option value="₦50,000 – ₦100,000">
+                ₦50,000 – ₦100,000
+            </option>
+
+            <option value="₦100,000 – ₦250,000">
+                ₦100,000 – ₦250,000
+            </option>
+
+            <option value="₦250,000 – ₦500,000">
+                ₦250,000 – ₦500,000
+            </option>
+
+            <option value="₦500,000+">
+                ₦500,000+
+            </option>
+
+            <option value="Let's discuss">
+                Let's discuss
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- TIMELINE -->
+
+    <div class="group">
+
+        <label>
+            Timeline
+        </label>
+
+        <select
+            name="timeline"
+            id="timeline"
+        >
+
+            <option value="">
+                Select timeline
+            </option>
+
+            <option value="As soon as possible">
+                As soon as possible
+            </option>
+
+            <option value="1–2 weeks">
+                1–2 weeks
+            </option>
+
+            <option value="2–4 weeks">
+                2–4 weeks
+            </option>
+
+            <option value="1–2 months">
+                1–2 months
+            </option>
+
+            <option value="Flexible">
+                Flexible
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- PROJECT TYPE -->
+
+    <div class="group">
+
+        <label>
+            Project Type
+        </label>
+
+        <select
+            name="projectType"
+            id="projectType"
+        >
+
+            <option value="">
+                Select type
+            </option>
+
+            <option value="New Project">
+                New Project
+            </option>
+
+            <option value="Existing Project">
+                Existing Project
+            </option>
+
+            <option value="Redesign">
+                Redesign
+            </option>
+
+            <option value="Fix / Bug">
+                Fix / Bug
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- REFERENCE -->
+
+    <div class="group">
+
+        <label>
+            Reference Website
+        </label>
+
+        <input
+            type="url"
+            name="reference"
+            id="reference"
+            placeholder="https://example.com"
+        >
+
+    </div>
+
+
+    <!-- DESCRIPTION -->
+
+    <div class="group full">
+
+        <label>
+            Project Description <span>*</span>
+        </label>
+
+        <textarea
+            name="projectDescription"
+            id="projectDescription"
+            placeholder="Tell me exactly what you want to build..."
+            required
+        ></textarea>
+
+    </div>
+
+
+    <!-- FILE -->
+
+    <div class="group full">
+
+        <label>
+            Project Image / File
+        </label>
+
+        <div class="upload">
+
+            <i class="fas fa-cloud-arrow-up"></i>
+
+            <p>
+                You can select an image or document
+                (max 10MB) to attach as a reference.
+            </p>
+
+            <input
+                type="file"
+                name="projectFile"
+                id="projectFile"
+                accept="image/*,.pdf,.doc,.docx"
+            >
+
         </div>
 
-        <div class="services">
-
-            <div class="service" onclick="selectService('Website Development', this)">
-                <i class="fas fa-code"></i>
-                <h3>Website Development</h3>
-                <p>Modern, responsive and fast websites.</p>
-            </div>
-
-            <div class="service" onclick="selectService('UI/UX Design', this)">
-                <i class="fas fa-pen-ruler"></i>
-                <h3>UI/UX Design</h3>
-                <p>Clean and user-friendly interface designs.</p>
-            </div>
-
-            <div class="service" onclick="selectService('Graphics Design', this)">
-                <i class="fas fa-palette"></i>
-                <h3>Graphics Design</h3>
-                <p>Professional graphics and visual branding.</p>
-            </div>
-
-            <div class="service" onclick="selectService('E-Commerce', this)">
-                <i class="fas fa-cart-shopping"></i>
-                <h3>E-Commerce</h3>
-                <p>Online stores and shopping experiences.</p>
-            </div>
-
-            <div class="service" onclick="selectService('Web Maintenance', this)">
-                <i class="fas fa-screwdriver-wrench"></i>
-                <h3>Web Maintenance</h3>
-                <p>Updates, fixes and improvements.</p>
-            </div>
-
-            <div class="service" onclick="selectService('Other', this)">
-                <i class="fas fa-lightbulb"></i>
-                <h3>Something Else</h3>
-                <p>Have another idea? Tell me about it.</p>
-            </div>
-
-        </div>
+    </div>
 
 
-        <!-- FORM -->
-        <div class="section-title">
-            <h2>Project <span>Details</span></h2>
-        </div>
-
-        <div class="form-box">
-
-            <form id="hireForm">
-
-                <div class="form-grid">
-
-                    <div class="form-group">
-                        <label for="name">Your Name *</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Enter your name"
-                            required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="you@example.com"
-                            required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone / WhatsApp</label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            placeholder="+234...">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="service">Service *</label>
-
-                        <select id="service" name="service" required>
-                            <option value="">Select a service</option>
-                            <option>Website Development</option>
-                            <option>UI/UX Design</option>
-                            <option>Graphics Design</option>
-                            <option>E-Commerce</option>
-                            <option>Web Maintenance</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="budget">Estimated Budget</label>
-
-                        <select id="budget" name="budget">
-                            <option value="">Select your budget</option>
-                            <option>₦50,000 – ₦100,000</option>
-                            <option>₦100,000 – ₦250,000</option>
-                            <option>₦250,000 – ₦500,000</option>
-                            <option>₦500,000+</option>
-                            <option>Let's discuss</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="timeline">Project Timeline</label>
-
-                        <select id="timeline" name="timeline">
-                            <option value="">Select timeline</option>
-                            <option>As soon as possible</option>
-                            <option>1–2 weeks</option>
-                            <option>2–4 weeks</option>
-                            <option>1–2 months</option>
-                            <option>Flexible</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group full">
-                        <label for="project">Tell Me About Your Project *</label>
-
-                        <textarea
-                            id="project"
-                            name="project"
-                            placeholder="Tell me what you want to build, the features you need, and any important details..."
-                            required></textarea>
-                    </div>
-
-                </div>
-
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane"></i>
-                    Send Project Request
-                </button>
-
-            </form>
-
-        </div>
-
-    </main>
+</div>
 
 
-    <footer>
-        © 2026 <span>SinaFast</span>. All rights reserved.
-    </footer>
+<button
+    type="submit"
+    id="submitBtn"
+>
+
+    <i class="fas fa-paper-plane"></i>
+
+    Send Project Request
+
+</button>
 
 
-    <script>
+<div id="status"></div>
 
-        let selectedService = "";
 
-        function selectService(service, element) {
+</form>
 
-            selectedService = service;
 
-            document.querySelectorAll(".service").forEach(card => {
-                card.classList.remove("selected");
+</div>
+
+
+</main>
+
+
+<footer>
+
+    © 2026
+    <span>SinaFast</span>
+    . All rights reserved.
+
+</footer>
+
+
+<script>
+
+/*
+====================================================
+SINAFast HIRE FORM
+====================================================
+This is the ONLY script controlling this form.
+Do NOT also load a separate hireme.js on this page —
+that would attach a second submit listener and cause
+duplicate/conflicting requests (and confusing 400s).
+====================================================
+*/
+
+const API_URL = "http://localhost:5001/api/hire";
+
+const form = document.getElementById("hireForm");
+
+const button = document.getElementById("submitBtn");
+
+const status = document.getElementById("status");
+
+const serviceSelect = document.getElementById("service");
+
+
+/*
+====================================================
+SERVICE CARDS
+====================================================
+*/
+
+document.querySelectorAll(".service").forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        document
+            .querySelectorAll(".service")
+            .forEach(item => {
+                item.classList.remove("selected");
             });
 
-            element.classList.add("selected");
+        card.classList.add("selected");
 
-            document.getElementById("service").value = service;
+        serviceSelect.value = card.dataset.service;
 
-            document.getElementById("project").focus();
-        }
+    });
+
+});
 
 
-        document.getElementById("hireForm").addEventListener("submit", function(event) {
+/*
+Keep cards in sync if the user picks the
+dropdown directly instead of clicking a card.
+*/
 
-            event.preventDefault();
+serviceSelect.addEventListener("change", () => {
 
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const phone = document.getElementById("phone").value;
-            const service = document.getElementById("service").value;
-            const budget = document.getElementById("budget").value;
-            const timeline = document.getElementById("timeline").value;
-            const project = document.getElementById("project").value;
+    document
+        .querySelectorAll(".service")
+        .forEach(card => {
 
-            const subject = encodeURIComponent(
-                "New Hire Me Request - SinaFast"
+            card.classList.toggle(
+                "selected",
+                card.dataset.service === serviceSelect.value
             );
-
-            const body = encodeURIComponent(
-                `Hello SinaFast,
-
-I would like to hire you for a project.
-
-Name: ${name}
-Email: ${email}
-Phone/WhatsApp: ${phone}
-
-Service: ${service}
-Budget: ${budget}
-Timeline: ${timeline}
-
-Project Details:
-${project}
-
-Thank you.`
-            );
-
-            window.location.href =
-                `mailto:ezeonyekasinachifranklin@gmail.com?subject=${subject}&body=${body}`;
 
         });
 
-    </script>
-<script src="hireme.js"></script>
+});
+
+
+/*
+====================================================
+SUBMIT — single listener, JSON body
+====================================================
+*/
+
+form.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+
+    const formData = new FormData(form);
+
+    const trim = (key) =>
+        (formData.get(key) || "").toString().trim();
+
+
+    /*
+    Log a plain-object view for debugging.
+    (The file itself is logged separately below.)
+    */
+
+    const debugView = {
+        fullName: trim("fullName"),
+        email: trim("email"),
+        phone: trim("phone"),
+        country: trim("country"),
+        service: trim("service"),
+        budget: trim("budget"),
+        timeline: trim("timeline"),
+        projectType: trim("projectType"),
+        reference: trim("reference"),
+        projectDescription: trim("projectDescription")
+    };
+
+    const fileInput = document.getElementById("projectFile");
+    const selectedFile =
+        fileInput.files && fileInput.files[0]
+            ? fileInput.files[0]
+            : null;
+
+    console.log("================================");
+    console.log("SINAFast HIRE FORM DATA (outgoing)");
+    console.log("================================");
+    console.log(debugView);
+    console.log(
+        "projectFile:",
+        selectedFile
+            ? `${selectedFile.name} (${selectedFile.size} bytes)`
+            : "none"
+    );
+
+
+    /*
+    Client-side validation (mirrors server rules)
+    */
+
+    const missing = [];
+
+    if (!debugView.fullName) missing.push("Full Name");
+    if (!debugView.email) missing.push("Email Address");
+    if (!debugView.service) missing.push("Service");
+    if (!debugView.projectDescription) missing.push("Project Description");
+
+    if (missing.length > 0) {
+
+        showError(
+            "Please fill in: " + missing.join(", ")
+        );
+
+        return;
+
+    }
+
+
+    /*
+    Rebuild a clean FormData with trimmed text values
+    (this also carries the file field automatically,
+    since it's built from the real <form> element).
+    We overwrite each trimmed text field so whitespace-
+    only entries don't slip through as "filled in".
+    */
+
+    Object.keys(debugView).forEach((key) => {
+        formData.set(key, debugView[key]);
+    });
+
+
+    button.disabled = true;
+
+    button.innerHTML =
+        '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+
+    try {
+
+        /*
+        IMPORTANT: do NOT set a Content-Type header here.
+        The browser sets the correct
+        "multipart/form-data; boundary=..." header itself
+        when the body is a FormData object — setting it
+        manually breaks the upload.
+        */
+
+        const response = await fetch(API_URL, {
+
+            method: "POST",
+
+            body: formData
+
+        });
+
+
+        const result = await response.json();
+
+        console.log("SERVER RESPONSE:", result);
+
+
+        if (!response.ok || !result.success) {
+
+            throw new Error(
+                result.message ||
+                "Unable to send your project request."
+            );
+
+        }
+
+
+        showSuccess(
+            "Project request sent successfully! 🚀"
+        );
+
+        form.reset();
+
+        document
+            .querySelectorAll(".service")
+            .forEach(card => {
+                card.classList.remove("selected");
+            });
+
+
+    } catch (error) {
+
+        console.error("ERROR:", error);
+
+        showError(
+            error.message ||
+            "Something went wrong. Please check your " +
+            "connection and try again."
+        );
+
+
+    } finally {
+
+        button.disabled = false;
+
+        button.innerHTML =
+            '<i class="fas fa-paper-plane"></i> Send Project Request';
+
+    }
+
+});
+
+
+/*
+====================================================
+MESSAGES
+====================================================
+*/
+
+function showError(message) {
+
+    status.className = "error";
+
+    status.innerHTML =
+        '<i class="fas fa-circle-exclamation"></i> ' +
+        message;
+
+}
+
+
+function showSuccess(message) {
+
+    status.className = "success";
+
+    status.innerHTML =
+        '<i class="fas fa-circle-check"></i> ' +
+        message;
+
+}
+
+</script>
+
+
 </body>
+
 </html>
-```
