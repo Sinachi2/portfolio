@@ -700,35 +700,21 @@
 
 #header .navmenu .dropdown > .dropdown-menu {
     position: relative;
-
-    display: block;
-
+    display: none;              /* hidden by default */
     width: calc(100% - 12px);
-
     margin: 5px 0 6px 12px;
-
     padding: 6px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(10, 23, 39, 0.98),
-            rgba(3, 10, 18, 0.98)
-        );
-
+    background: linear-gradient(145deg, rgba(10, 23, 39, 0.98), rgba(3, 10, 18, 0.98));
     border: 1px solid rgba(255, 255, 255, 0.07);
-
-    border-left:
-        2px solid rgba(5, 99, 175, 0.35);
-
+    border-left: 2px solid rgba(5, 99, 175, 0.35);
     border-radius: 13px;
-
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.3),
-        inset 0 1px rgba(255,255,255,0.03);
-
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 1px rgba(255,255,255,0.03);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
+}
+
+#header .navmenu .dropdown > .dropdown-menu.dropdown-active {
+    display: block;             /* shown only when the JS toggles this class */
 }
 
 #header .navmenu .dropdown > .dropdown-menu > li {
@@ -6368,7 +6354,7 @@ a {
         font-size: 9px;
     }
 }
-```css
+
 /* =========================================================
    SINAFast — PREMIUM RESUME SECTION
    HTML UNCHANGED
