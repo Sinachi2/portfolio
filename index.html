@@ -12439,7 +12439,7 @@ a {
 
                     <!-- /Sponsor Section -->
 
-                    <!-- Contact Section -->
+<!-- Contact Section -->
                     <section id="contact" class="contact section">
                         <!-- Section Title -->
                         <div class="container section-title" data-aos="fade-up">
@@ -12508,8 +12508,7 @@ a {
 
                                 <div class="col-lg-7">
                                     <form
-                                        action="https://formspree.io/f/xpqwlgor"
-                                        method="POST"
+                                        id="contactForm"
                                         class="php-email-form"
                                         data-aos="fade-up"
                                         data-aos-delay="200"
@@ -12574,7 +12573,7 @@ a {
                                                     Thank you for submitting! We will get back to you shortly.
                                                 </div>
 
-                                                <button type="submit">Send Message</button>
+                                                <button type="submit" id="contactSubmitBtn">Send Message</button>
                                             </div>
                                         </div>
                                     </form>
@@ -12584,6 +12583,128 @@ a {
                         </div>
                     </section>
                     <!-- /Contact Section -->
+
+                    <script>
+
+                    /*
+                    ====================================================
+                    SINAFast CONTACT FORM
+                    ====================================================
+                    Same pattern as the Hire Me form: single submit
+                    listener, JSON fetch to the Node/Express backend,
+                    no Formspree, no page reload.
+                    ====================================================
+                    */
+
+                    (function () {
+
+                        const CONTACT_API_URL = "http://localhost:5001/api/contact";
+
+                        const contactForm = document.getElementById("contactForm");
+
+                        if (!contactForm) return;
+
+                        const submitBtn = document.getElementById("contactSubmitBtn");
+                        const loadingEl = contactForm.querySelector(".loading");
+                        const errorEl = contactForm.querySelector(".error-message");
+                        const sentEl = contactForm.querySelector(".sent-message");
+
+                        contactForm.addEventListener("submit", async function (event) {
+
+                            event.preventDefault();
+
+                            errorEl.style.display = "none";
+                            sentEl.style.display = "none";
+
+                            const formData = new FormData(contactForm);
+
+                            const trim = (key) =>
+                                (formData.get(key) || "").toString().trim();
+
+                            const data = {
+                                name: trim("name"),
+                                email: trim("email"),
+                                subject: trim("subject"),
+                                message: trim("message")
+                            };
+
+                            console.log("Contact form data (outgoing):", data);
+
+                            const missing = [];
+
+                            if (!data.name) missing.push("Your Name");
+                            if (!data.email) missing.push("Your Email");
+                            if (!data.subject) missing.push("Subject");
+                            if (!data.message) missing.push("Message");
+
+                            if (missing.length > 0) {
+
+                                errorEl.textContent =
+                                    "Please fill in: " + missing.join(", ");
+
+                                errorEl.style.display = "block";
+
+                                return;
+
+                            }
+
+                            submitBtn.disabled = true;
+                            loadingEl.style.display = "block";
+
+                            try {
+
+                                const response = await fetch(CONTACT_API_URL, {
+
+                                    method: "POST",
+
+                                    headers: {
+                                        "Content-Type": "application/json"
+                                    },
+
+                                    body: JSON.stringify(data)
+
+                                });
+
+                                const result = await response.json();
+
+                                console.log("Contact server response:", result);
+
+                                if (!response.ok || !result.success) {
+
+                                    throw new Error(
+                                        result.message ||
+                                        "Unable to send your message."
+                                    );
+
+                                }
+
+                                sentEl.style.display = "block";
+
+                                contactForm.reset();
+
+                            } catch (error) {
+
+                                console.error("Contact form error:", error);
+
+                                errorEl.textContent =
+                                    error.message ||
+                                    "Something went wrong. Please check your " +
+                                    "connection and try again.";
+
+                                errorEl.style.display = "block";
+
+                            } finally {
+
+                                submitBtn.disabled = false;
+                                loadingEl.style.display = "none";
+
+                            }
+
+                        });
+
+                    })();
+
+                    </script>
                     <!-- Bootstrap Icons -->
                     <link
                         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
