@@ -224,7 +224,711 @@
 
     color: #172033;
 }
+/* =========================================================
+   PREMIUM CONTACT SECTION — CSS ONLY
+   HTML DOES NOT NEED TO CHANGE
+========================================================= */
 
+#contact {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100px;
+}
+
+/* Ambient background glow */
+#contact::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(20, 157, 221, 0.08);
+    filter: blur(110px);
+    top: 80px;
+    left: -280px;
+    pointer-events: none;
+}
+
+#contact::after {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: rgba(111, 66, 193, 0.07);
+    filter: blur(110px);
+    bottom: 50px;
+    right: -250px;
+    pointer-events: none;
+}
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+#contact .section-title {
+    position: relative;
+    z-index: 2;
+}
+
+#contact .section-title h2 {
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+}
+
+#contact .section-title h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    margin: 14px auto 0;
+    border-radius: 20px;
+    background: linear-gradient(
+        90deg,
+        #149ddd,
+        #6f42c1
+    );
+    box-shadow: 0 0 18px rgba(20, 157, 221, 0.45);
+}
+
+#contact .section-title p {
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.8;
+    opacity: 0.75;
+}
+
+/* =========================================================
+   MAIN CONTACT LAYOUT
+========================================================= */
+
+#contact .row {
+    position: relative;
+    z-index: 2;
+}
+
+#contact .col-lg-5,
+#contact .col-lg-7 {
+    position: relative;
+}
+
+/* =========================================================
+   LEFT CONTACT CARD
+========================================================= */
+
+#contact .info-wrap {
+    position: relative;
+    height: 100%;
+    padding: 32px;
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.09),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    overflow: hidden;
+}
+
+/* Decorative glow inside card */
+#contact .info-wrap::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(20, 157, 221, 0.12);
+    filter: blur(65px);
+    top: -80px;
+    right: -70px;
+    pointer-events: none;
+}
+
+#contact .info-wrap::after {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: rgba(111, 66, 193, 0.08);
+    filter: blur(55px);
+    bottom: 180px;
+    left: -70px;
+    pointer-events: none;
+}
+
+/* =========================================================
+   CONTACT INFO ITEMS
+========================================================= */
+
+#contact .info-item {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+
+    padding: 18px;
+    margin-bottom: 14px;
+
+    border-radius: 17px;
+
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Hover */
+#contact .info-item:hover {
+    transform: translateX(7px);
+
+    background: rgba(20, 157, 221, 0.055);
+
+    border-color: rgba(20, 157, 221, 0.30);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.10),
+        0 0 25px rgba(20, 157, 221, 0.06);
+}
+
+/* =========================================================
+   CONTACT ICONS
+========================================================= */
+
+#contact .info-item > i {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    min-width: 52px;
+
+    margin-right: 16px;
+
+    border-radius: 15px;
+
+    color: #149ddd;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20, 157, 221, 0.16),
+            rgba(20, 157, 221, 0.05)
+        );
+
+    border: 1px solid rgba(20, 157, 221, 0.14);
+
+    font-size: 21px;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+#contact .info-item:hover > i {
+    transform: scale(1.08) rotate(-5deg);
+
+    color: #fff;
+
+    background: linear-gradient(
+        135deg,
+        #149ddd,
+        #087db8
+    );
+
+    box-shadow:
+        0 8px 25px rgba(20, 157, 221, 0.30);
+}
+
+/* =========================================================
+   INFO TEXT
+========================================================= */
+
+#contact .info-item h3 {
+    margin: 0 0 5px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 0.2px;
+}
+
+#contact .info-item p {
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1.6;
+
+    opacity: 0.65;
+
+    word-break: break-word;
+}
+
+/* =========================================================
+   MAP
+========================================================= */
+
+#contact .info-wrap iframe {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    width: 100%;
+    height: 270px;
+
+    margin-top: 22px;
+
+    border: 0 !important;
+
+    border-radius: 19px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.16);
+
+    filter: grayscale(15%) contrast(1.03);
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+#contact .info-wrap iframe:hover {
+    transform: scale(1.01);
+    filter: grayscale(0%) contrast(1.05);
+}
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+#contact .php-email-form {
+    position: relative;
+
+    height: 100%;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.09),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    overflow: hidden;
+}
+
+/* Form decorative glow */
+#contact .php-email-form::before {
+    content: "";
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(20, 157, 221, 0.08);
+
+    filter: blur(70px);
+
+    top: -120px;
+    right: -80px;
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   FORM LABELS
+========================================================= */
+
+#contact .php-email-form label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    opacity: 0.85;
+}
+
+/* =========================================================
+   FORM INPUTS
+========================================================= */
+
+#contact .php-email-form .form-control {
+    min-height: 52px;
+
+    padding: 13px 16px;
+
+    border-radius: 13px;
+
+    border: 1px solid rgba(128, 128, 128, 0.20);
+
+    background: rgba(255, 255, 255, 0.045);
+
+    color: inherit;
+
+    font-size: 13px;
+
+    box-shadow: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Placeholder */
+#contact .php-email-form .form-control::placeholder {
+    opacity: 0.42;
+}
+
+/* Hover */
+#contact .php-email-form .form-control:hover {
+    border-color: rgba(20, 157, 221, 0.28);
+}
+
+/* Focus */
+#contact .php-email-form .form-control:focus {
+    outline: none;
+
+    border-color: #149ddd;
+
+    background: rgba(20, 157, 221, 0.045);
+
+    box-shadow:
+        0 0 0 4px rgba(20, 157, 221, 0.08),
+        0 10px 30px rgba(20, 157, 221, 0.07);
+
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+#contact .php-email-form textarea.form-control {
+    min-height: 180px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+#contact .php-email-form button[type="submit"] {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 57px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #149ddd,
+            #087db8
+        );
+
+    color: #fff;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 30px rgba(20, 157, 221, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+}
+
+/* Shine */
+#contact .php-email-form button[type="submit"]::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.22),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.7s ease;
+}
+
+#contact .php-email-form button[type="submit"]:hover::before {
+    left: 140%;
+}
+
+#contact .php-email-form button[type="submit"]:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 40px rgba(20, 157, 221, 0.35);
+
+    filter: brightness(1.06);
+}
+
+#contact .php-email-form button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+#contact .loading {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#contact .spinner {
+    display: inline-block;
+
+    width: 18px;
+    height: 18px;
+
+    margin-right: 7px;
+
+    border: 2px solid rgba(128, 128, 128, 0.25);
+
+    border-top-color: #149ddd;
+
+    border-radius: 50%;
+
+    vertical-align: middle;
+
+    animation: contactSpinner 0.8s linear infinite;
+}
+
+@keyframes contactSpinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+#contact .error-message {
+    padding: 13px 16px;
+
+    border-radius: 12px;
+
+    background: rgba(220, 53, 69, 0.08);
+
+    border: 1px solid rgba(220, 53, 69, 0.15);
+
+    color: #dc3545 !important;
+
+    font-size: 13px;
+}
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+#contact .sent-message {
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    background: rgba(25, 135, 84, 0.10);
+
+    border: 1px solid rgba(25, 135, 84, 0.16);
+
+    color: #198754 !important;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+/* =========================================================
+   FORM SPACING
+========================================================= */
+
+#contact .php-email-form .row {
+    --bs-gutter-y: 20px;
+}
+
+#contact .php-email-form .text-center {
+    margin-top: 5px;
+}
+
+/* =========================================================
+   DARK MODE POLISH
+========================================================= */
+
+[data-theme="dark"] #contact .info-wrap,
+[data-theme="dark"] #contact .php-email-form {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 25, 35, 0.85),
+            rgba(10, 15, 25, 0.72)
+        );
+
+    border-color: rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+[data-theme="dark"] #contact .info-item {
+    background: rgba(255,255,255,0.025);
+}
+
+[data-theme="dark"] #contact .php-email-form .form-control {
+    background: rgba(0,0,0,0.18);
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    #contact .info-wrap,
+    #contact .php-email-form {
+        padding: 28px;
+    }
+
+    #contact .info-wrap iframe {
+        height: 300px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+
+    #contact {
+        padding-bottom: 60px;
+    }
+
+    #contact .info-wrap,
+    #contact .php-email-form {
+        padding: 20px;
+
+        border-radius: 20px;
+    }
+
+    #contact .info-item {
+        padding: 14px;
+    }
+
+    #contact .info-item > i {
+        width: 45px;
+        height: 45px;
+
+        min-width: 45px;
+
+        margin-right: 12px;
+
+        font-size: 18px;
+    }
+
+    #contact .info-item h3 {
+        font-size: 13px;
+    }
+
+    #contact .info-item p {
+        font-size: 11px;
+    }
+
+    #contact .info-wrap iframe {
+        height: 260px;
+
+        margin-top: 18px;
+    }
+
+    #contact .php-email-form .form-control {
+        min-height: 49px;
+    }
+
+    #contact .php-email-form textarea.form-control {
+        min-height: 150px;
+    }
+
+    #contact .php-email-form button[type="submit"] {
+        min-height: 54px;
+    }
+}
 
 /* Information text */
 
