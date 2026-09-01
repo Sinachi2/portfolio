@@ -5,6 +5,1274 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <title>SinaFast | Sinachi Franklin Ezeonyeka - Portfolio</title>
         <style>
+            /* =========================================================
+   SINaFAST — MASTER RESPONSIVE SYSTEM
+   HTML UNCHANGED
+   Add this at the VERY END of style.css
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   GLOBAL RESPONSIVE FOUNDATION
+--------------------------------------------------------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+video,
+iframe,
+svg {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Prevent long text from breaking layouts */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+li {
+    overflow-wrap: anywhere;
+}
+
+/* Better touch targets */
+button,
+a,
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .container {
+        max-width: 1140px;
+    }
+
+    section {
+        overflow: hidden;
+    }
+
+    #about .content,
+    #contact .php-email-form,
+    #contact .info-wrap,
+    #skills .skills-content {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP / LAPTOP
+========================================================= */
+
+@media (max-width: 1199px) {
+
+    .container {
+        max-width: 960px;
+    }
+
+    section {
+        overflow: hidden;
+    }
+
+    /* Hero */
+    .hero-pro {
+        min-height: 88vh;
+        padding: 70px 25px;
+    }
+
+    .hero-pro-inner {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    /* About */
+    #about .content {
+        padding: 30px;
+    }
+
+    /* Skills */
+    #skills .skills-content {
+        padding: 30px;
+    }
+
+    /* Contact */
+    #contact .info-wrap,
+    #contact .php-email-form {
+        padding: 30px;
+    }
+}
+
+
+/* =========================================================
+   TABLET — 992px
+========================================================= */
+
+@media (max-width: 991px) {
+
+    /* -----------------------------------------------------
+       GLOBAL
+    ----------------------------------------------------- */
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* -----------------------------------------------------
+       SECTION TITLES
+    ----------------------------------------------------- */
+
+    .section-title {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .section-title h2,
+    #about .section-title h2,
+    #skills .section-title h2 {
+        font-size: 36px;
+    }
+
+    .section-title p,
+    #about .section-title p,
+    #skills .section-title p {
+        max-width: 700px;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero-pro {
+        min-height: 85vh;
+        padding: 70px 25px;
+    }
+
+    .hero-pro-inner {
+        width: 100%;
+        max-width: 680px;
+    }
+
+    .hero-avatar-wrap {
+        width: 110px;
+        height: 110px;
+        margin-bottom: 22px;
+    }
+
+    .orb-1 {
+        width: 300px;
+        height: 300px;
+    }
+
+    .orb-2 {
+        width: 260px;
+        height: 260px;
+    }
+
+    .orb-3 {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* -----------------------------------------------------
+       ABOUT
+    ----------------------------------------------------- */
+
+    #about .section-title {
+        margin-bottom: 40px;
+    }
+
+    #about .content {
+        padding: 28px;
+        margin-top: 25px;
+    }
+
+    #about #aboutme {
+        max-width: 330px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #about .content h2:first-child {
+        font-size: 30px;
+    }
+
+    #about .content p {
+        font-size: 14px;
+    }
+
+    #about .content ul li {
+        padding: 10px;
+    }
+
+    /* -----------------------------------------------------
+       SKILLS
+    ----------------------------------------------------- */
+
+    #skills {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    #skills .skills-content {
+        padding: 28px;
+    }
+
+    #skills .progress {
+        padding: 18px;
+    }
+
+    /* -----------------------------------------------------
+       RESUME
+    ----------------------------------------------------- */
+
+    #resume {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+
+    /* -----------------------------------------------------
+       EDUCATION
+    ----------------------------------------------------- */
+
+    #education {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+
+    /* -----------------------------------------------------
+       CERTIFICATES
+    ----------------------------------------------------- */
+
+    #certificates {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+
+    /* -----------------------------------------------------
+       PORTFOLIO
+    ----------------------------------------------------- */
+
+    #portfolio {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+
+    /* -----------------------------------------------------
+       SERVICES
+    ----------------------------------------------------- */
+
+    #services {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+
+    .services .service-item {
+        height: 100%;
+    }
+
+    /* -----------------------------------------------------
+       CONTACT
+    ----------------------------------------------------- */
+
+    #contact {
+        padding-top: 75px !important;
+        padding-bottom: 75px !important;
+    }
+
+    #contact .info-wrap,
+    #contact .php-email-form {
+        padding: 28px;
+        border-radius: 22px;
+    }
+
+    #contact .info-wrap iframe {
+        height: 300px !important;
+    }
+
+    #contact .info-item {
+        padding: 15px;
+    }
+
+    #contact .php-email-form textarea.form-control {
+        min-height: 170px;
+    }
+
+    /* -----------------------------------------------------
+       CTA BUTTONS
+    ----------------------------------------------------- */
+
+    .cta-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .cta-btn {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   TABLET SMALL — 768px
+========================================================= */
+
+@media (max-width: 767px) {
+
+    /* -----------------------------------------------------
+       GLOBAL CONTAINER
+    ----------------------------------------------------- */
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* -----------------------------------------------------
+       SECTION TITLE
+    ----------------------------------------------------- */
+
+    .section-title {
+        margin-bottom: 35px;
+    }
+
+    .section-title h2,
+    #about .section-title h2,
+    #skills .section-title h2 {
+        font-size: 32px;
+        letter-spacing: -0.5px;
+    }
+
+    .section-title p,
+    #about .section-title p,
+    #skills .section-title p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero-pro {
+        min-height: auto;
+        min-height: 90svh;
+        padding: 80px 20px 70px;
+    }
+
+    .hero-pro-inner {
+        max-width: 100%;
+    }
+
+    .hero-avatar-wrap {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+
+    .hero-badge {
+        max-width: 95%;
+        padding: 7px 13px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .grid-overlay {
+        background-size: 30px 30px;
+    }
+
+    .orb {
+        filter: blur(55px);
+        opacity: 0.42;
+    }
+
+    .orb-1 {
+        width: 240px;
+        height: 240px;
+        left: -100px;
+        top: -50px;
+    }
+
+    .orb-2 {
+        width: 220px;
+        height: 220px;
+        right: -100px;
+        bottom: -60px;
+    }
+
+    .orb-3 {
+        width: 180px;
+        height: 180px;
+        right: -50px;
+    }
+
+    /* -----------------------------------------------------
+       CTA
+    ----------------------------------------------------- */
+
+    .cta-group {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cta-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 13px 18px;
+        font-size: 14px;
+    }
+
+    /* -----------------------------------------------------
+       ABOUT
+    ----------------------------------------------------- */
+
+    #about .section-title {
+        margin-bottom: 35px;
+    }
+
+    #about #aboutme {
+        width: min(100%, 320px);
+        margin-bottom: 25px;
+        border-radius: 24px;
+    }
+
+    #about .content {
+        padding: 23px;
+        border-radius: 22px;
+    }
+
+    #about .content h2:first-child {
+        font-size: 27px;
+    }
+
+    #about .content h2:nth-child(2) {
+        font-size: 13px;
+    }
+
+    #about .content p {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    #about .content .fst-italic {
+        padding-left: 15px;
+    }
+
+    #about .content ul li {
+        align-items: flex-start;
+        gap: 7px;
+    }
+
+    #about .content ul li strong {
+        white-space: normal;
+    }
+
+    #about .content ul li span {
+        font-size: 13px;
+    }
+
+    #about .content .d-flex {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 10px;
+    }
+
+    #about .content .btn-primary,
+    #about .content .btn-outline-primary,
+    #about .hire-me-btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* -----------------------------------------------------
+       SKILLS
+    ----------------------------------------------------- */
+
+    #skills .section-title {
+        margin-bottom: 35px;
+    }
+
+    #skills .skills-content {
+        padding: 22px;
+        border-radius: 22px;
+    }
+
+    #skills .progress {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    /* -----------------------------------------------------
+       SERVICES
+    ----------------------------------------------------- */
+
+    .services .service-item {
+        padding: 22px !important;
+        border-radius: 18px;
+    }
+
+    /* -----------------------------------------------------
+       CONTACT
+    ----------------------------------------------------- */
+
+    #contact {
+        padding-top: 65px !important;
+        padding-bottom: 65px !important;
+    }
+
+    #contact .info-wrap,
+    #contact .php-email-form {
+        padding: 22px;
+        border-radius: 20px;
+    }
+
+    #contact .info-item {
+        padding: 13px 8px;
+        margin-bottom: 10px;
+    }
+
+    #contact .info-item > i {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        margin-right: 12px;
+        font-size: 18px;
+    }
+
+    #contact .info-item h3 {
+        font-size: 15px;
+    }
+
+    #contact .info-item p {
+        font-size: 12px;
+    }
+
+    #contact .info-wrap iframe {
+        height: 250px !important;
+        margin-top: 18px;
+        border-radius: 16px;
+    }
+
+    #contact .php-email-form {
+        margin-top: 20px;
+    }
+
+    #contact .php-email-form label {
+        font-size: 13px;
+    }
+
+    #contact .php-email-form .form-control {
+        min-height: 50px;
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    #contact .php-email-form textarea.form-control {
+        min-height: 150px;
+    }
+
+    #contact .php-email-form button[type="submit"] {
+        width: 100%;
+        min-width: 0;
+        min-height: 53px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — 575px
+========================================================= */
+
+@media (max-width: 575px) {
+
+    /* -----------------------------------------------------
+       BODY
+    ----------------------------------------------------- */
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* -----------------------------------------------------
+       SECTION SPACING
+    ----------------------------------------------------- */
+
+    section {
+        padding-top: 55px !important;
+        padding-bottom: 55px !important;
+    }
+
+    /* -----------------------------------------------------
+       TITLES
+    ----------------------------------------------------- */
+
+    .section-title {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .section-title h2,
+    #about .section-title h2,
+    #skills .section-title h2 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .section-title h2::after,
+    #about .section-title h2::after,
+    #skills .section-title h2::after {
+        width: 45px;
+        height: 3px;
+        bottom: -9px;
+    }
+
+    .section-title p,
+    #about .section-title p,
+    #skills .section-title p {
+        margin-top: 20px;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero-pro {
+        width: 100%;
+        min-height: 100svh;
+        padding: 75px 16px 55px;
+    }
+
+    .hero-pro-inner {
+        width: 100%;
+    }
+
+    .hero-avatar-wrap {
+        width: 86px;
+        height: 86px;
+        margin-bottom: 18px;
+    }
+
+    .hero-avatar {
+        border-width: 2px;
+    }
+
+    .hero-avatar-ring {
+        inset: -6px;
+    }
+
+    .hero-badge {
+        max-width: 100%;
+        padding: 6px 11px;
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .grid-overlay {
+        background-size: 25px 25px;
+    }
+
+    .orb {
+        filter: blur(45px);
+        opacity: 0.35;
+    }
+
+    .orb-1 {
+        width: 190px;
+        height: 190px;
+        left: -90px;
+        top: -30px;
+    }
+
+    .orb-2 {
+        width: 180px;
+        height: 180px;
+        right: -90px;
+        bottom: -30px;
+    }
+
+    .orb-3 {
+        width: 140px;
+        height: 140px;
+    }
+
+    /* -----------------------------------------------------
+       CTA BUTTONS
+    ----------------------------------------------------- */
+
+    .cta-group {
+        gap: 9px;
+        margin-top: 20px;
+    }
+
+    .cta-btn {
+        width: 100%;
+        min-height: 48px;
+        padding: 12px 16px;
+        border-radius: 14px;
+        font-size: 13px;
+    }
+
+    /* -----------------------------------------------------
+       ABOUT
+    ----------------------------------------------------- */
+
+    #about {
+        width: 100%;
+    }
+
+    #about .section-title {
+        margin-bottom: 30px;
+    }
+
+    #about #aboutme {
+        width: min(100%, 280px);
+        padding: 7px;
+        border-radius: 20px;
+    }
+
+    #about .content {
+        padding: 20px 17px;
+        border-radius: 19px;
+    }
+
+    #about .content h2:first-child {
+        font-size: 24px;
+        line-height: 1.25;
+    }
+
+    #about .content h2:nth-child(2) {
+        display: inline-block;
+        max-width: 100%;
+        padding: 7px 11px;
+        font-size: 12px;
+    }
+
+    #about .content p {
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+    #about .content .fst-italic {
+        padding-left: 13px;
+        border-left-width: 2px;
+    }
+
+    #about .content ul li {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 7px;
+        padding: 9px 7px;
+    }
+
+    #about .content ul li strong {
+        font-size: 12px;
+        white-space: normal;
+    }
+
+    #about .content ul li span {
+        font-size: 12px;
+    }
+
+    #about .content .d-flex {
+        margin-top: 22px !important;
+        gap: 9px;
+    }
+
+    #about .content .btn-primary,
+    #about .content .btn-outline-primary,
+    #about .hire-me-btn {
+        width: 100%;
+        min-height: 47px;
+        padding: 11px 15px;
+        border-radius: 11px;
+        font-size: 12px;
+    }
+
+    /* -----------------------------------------------------
+       SKILLS
+    ----------------------------------------------------- */
+
+    #skills {
+        width: 100%;
+    }
+
+    #skills .skills-content {
+        padding: 17px;
+        border-radius: 19px;
+    }
+
+    #skills .progress {
+        padding: 14px;
+        margin-bottom: 9px;
+        border-radius: 13px;
+    }
+
+    /* -----------------------------------------------------
+       RESUME / EDUCATION / CERTIFICATES
+    ----------------------------------------------------- */
+
+    #resume,
+    #education,
+    #certificates {
+        padding-top: 55px !important;
+        padding-bottom: 55px !important;
+    }
+
+    /* -----------------------------------------------------
+       PORTFOLIO
+    ----------------------------------------------------- */
+
+    #portfolio {
+        padding-top: 55px !important;
+        padding-bottom: 55px !important;
+    }
+
+    /* Make portfolio cards fit small screens */
+    #portfolio .portfolio-item,
+    #portfolio .portfolio-content {
+        max-width: 100%;
+    }
+
+    /* -----------------------------------------------------
+       SERVICES
+    ----------------------------------------------------- */
+
+    #services {
+        padding-top: 55px !important;
+        padding-bottom: 55px !important;
+    }
+
+    .services .service-item {
+        width: 100%;
+        padding: 20px !important;
+        border-radius: 17px;
+    }
+
+    /* -----------------------------------------------------
+       CONTACT
+    ----------------------------------------------------- */
+
+    #contact {
+        padding-top: 55px !important;
+        padding-bottom: 55px !important;
+    }
+
+    #contact .section-title {
+        margin-bottom: 28px;
+    }
+
+    #contact .info-wrap,
+    #contact .php-email-form {
+        width: 100%;
+        padding: 19px 16px;
+        border-radius: 18px;
+    }
+
+    #contact .info-item {
+        width: 100%;
+        padding: 12px 6px;
+        border-radius: 13px;
+    }
+
+    #contact .info-item > i {
+        width: 43px;
+        height: 43px;
+        min-width: 43px;
+        margin-right: 10px;
+        border-radius: 11px;
+        font-size: 17px;
+    }
+
+    #contact .info-item h3 {
+        font-size: 13px;
+        margin-bottom: 3px;
+    }
+
+    #contact .info-item p {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    #contact .info-wrap iframe {
+        width: 100% !important;
+        height: 220px !important;
+        margin-top: 15px;
+        border-radius: 14px;
+    }
+
+    #contact .php-email-form {
+        margin-top: 15px;
+    }
+
+    #contact .php-email-form label {
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    #contact .php-email-form .form-control {
+        width: 100%;
+        min-height: 48px;
+        padding: 11px 13px;
+        border-radius: 11px;
+        font-size: 13px;
+    }
+
+    #contact .php-email-form textarea.form-control {
+        min-height: 140px;
+    }
+
+    #contact .php-email-form button[type="submit"] {
+        width: 100%;
+        min-width: 0;
+        min-height: 50px;
+        padding: 12px 15px;
+        border-radius: 12px;
+        font-size: 13px;
+    }
+
+    /* -----------------------------------------------------
+       CONTACT BACKGROUND EFFECTS
+    ----------------------------------------------------- */
+
+    #contact::before {
+        width: 280px;
+        height: 280px;
+        top: -80px;
+        right: -150px;
+    }
+
+    #contact::after {
+        width: 250px;
+        height: 250px;
+        bottom: -100px;
+        left: -130px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES — 400px
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .container {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .section-title h2,
+    #about .section-title h2,
+    #skills .section-title h2 {
+        font-size: 25px;
+    }
+
+    .section-title p,
+    #about .section-title p,
+    #skills .section-title p {
+        font-size: 12px;
+    }
+
+    .hero-pro {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .hero-avatar-wrap {
+        width: 78px;
+        height: 78px;
+    }
+
+    .hero-badge {
+        font-size: 10px;
+        padding: 6px 9px;
+    }
+
+    .cta-btn {
+        min-height: 45px;
+        padding: 10px 13px;
+        font-size: 12px;
+    }
+
+    #about .content {
+        padding: 17px 14px;
+    }
+
+    #about .content h2:first-child {
+        font-size: 21px;
+    }
+
+    #about .content p {
+        font-size: 12px;
+    }
+
+    #about .content ul li strong,
+    #about .content ul li span {
+        font-size: 11px;
+    }
+
+    #skills .skills-content {
+        padding: 13px;
+    }
+
+    #contact .info-wrap,
+    #contact .php-email-form {
+        padding: 16px 13px;
+    }
+
+    #contact .info-item > i {
+        width: 39px;
+        height: 39px;
+        min-width: 39px;
+        font-size: 15px;
+    }
+
+    #contact .info-item h3 {
+        font-size: 12px;
+    }
+
+    #contact .info-item p {
+        font-size: 10px;
+    }
+
+    #contact .info-wrap iframe {
+        height: 190px !important;
+    }
+
+    #contact .php-email-form .form-control {
+        min-height: 46px;
+        font-size: 12px;
+    }
+
+    #contact .php-email-form textarea.form-control {
+        min-height: 125px;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONES
+========================================================= */
+
+@media (max-height: 600px) and (max-width: 767px) {
+
+    .hero-pro {
+        min-height: auto;
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .hero-avatar-wrap {
+        width: 75px;
+        height: 75px;
+        margin-bottom: 14px;
+    }
+
+    .hero-badge {
+        margin-bottom: 12px;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   Remove large hover movements on phones/tablets
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    #about #aboutme:hover,
+    #about .content ul li:hover,
+    #contact .info-item:hover,
+    #contact .info-wrap iframe:hover,
+    #contact .php-email-form button[type="submit"]:hover,
+    .cta-btn:hover,
+    .services .service-item:hover {
+        transform: none !important;
+    }
+
+    .cta-btn::before,
+    #contact .php-email-form button[type="submit"]::before {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   Accessibility + better mobile performance
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* =========================================================
+   PREVENT HORIZONTAL OVERFLOW FROM ANIMATED ELEMENTS
+========================================================= */
+
+.hero-bg-fx,
+.hero-pro,
+#about,
+#skills,
+#contact,
+#portfolio,
+#services,
+#resume,
+#education,
+#certificates {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE FORM SAFETY
+========================================================= */
+
+@media (max-width: 575px) {
+
+    input,
+    textarea,
+    select {
+        max-width: 100%;
+    }
+
+    .row {
+        --bs-gutter-x: 1rem;
+    }
+
+    .row > * {
+        min-width: 0;
+    }
+
+    .form-control {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE TABLE SAFETY
+========================================================= */
+
+@media (max-width: 767px) {
+
+    table {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+
+/* =========================================================
+   FINAL MOBILE OVERRIDE
+========================================================= */
+
+@media (max-width: 575px) {
+
+    /* Never allow cards to create horizontal scrolling */
+    .card,
+    .service-item,
+    .portfolio-item,
+    .info-wrap,
+    .php-email-form,
+    .skills-content,
+    .content {
+        max-width: 100%;
+    }
+
+    /* Long URLs/emails */
+    a,
+    .info-item p,
+    .content span {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    /* Make all full-width buttons actually fit */
+    button,
+    .btn,
+    .cta-btn {
+        max-width: 100%;
+    }
+}
             .cta-group {
     align-items: center;
 }
