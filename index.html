@@ -4,6 +4,121 @@
         <meta charset="utf-8" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <title>SinaFast | Sinachi Franklin Ezeonyeka - Portfolio</title>
+        <style>
+            .cta-group {
+    align-items: center;
+}
+
+.cta-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 26px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s ease;
+    white-space: nowrap;
+}
+
+/* shine sweep on every button */
+.cta-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: -130%;
+    width: 60%;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.7s ease;
+    z-index: 1;
+}
+.cta-btn:hover::before {
+    left: 130%;
+}
+
+.cta-btn span, .cta-btn i {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* Download CV — solid, confident */
+.cta-download {
+    color: #fff;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    box-shadow: 0 8px 22px rgba(79, 70, 229, 0.35);
+}
+.cta-download:hover {
+    box-shadow: 0 16px 34px rgba(79, 70, 229, 0.5);
+}
+
+/* Support My Work — soft outline that fills on hover */
+.cta-support {
+    color: #ec4899;
+    background: rgba(236, 72, 153, 0.08);
+    border: 1.5px solid rgba(236, 72, 153, 0.4);
+    box-shadow: 0 6px 16px rgba(236, 72, 153, 0.15);
+}
+.cta-support:hover {
+    color: #fff;
+    background: linear-gradient(135deg, #ec4899, #f472b6);
+    border-color: transparent;
+    box-shadow: 0 16px 34px rgba(236, 72, 153, 0.4);
+}
+.cta-support i {
+    transition: transform 0.35s ease;
+}
+.cta-support:hover i {
+    transform: scale(1.2);
+}
+
+/* Hire Me — the star of the group */
+.cta-hire {
+    color: #fff;
+    background: linear-gradient(135deg, #7c3aed, #ec4899, #f97316);
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+    box-shadow: 0 10px 28px rgba(124, 58, 237, 0.4);
+}
+.cta-hire:hover {
+    box-shadow: 0 18px 42px rgba(236, 72, 153, 0.55);
+}
+.cta-hire .hire-icon {
+    transition: transform 0.35s ease;
+}
+.cta-hire:hover .hire-icon {
+    transform: translateX(2px) rotate(-10deg) scale(1.1);
+}
+.cta-hire .cta-arrow {
+    transition: transform 0.35s ease;
+}
+.cta-hire:hover .cta-arrow {
+    transform: translateX(6px);
+}
+
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .cta-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+        </style>
         <meta
             name="description"
             content="Front-end developer and UI/UX designer building responsive websites with React and Bootstrap. Based in Lagos, Nigeria."
@@ -402,17 +517,23 @@
                                 custom UI library, I deliver excellence with every line of code.
                             </p>
 
-                            <div class="d-flex gap-3 mt-2">
-                                <a href="assets/img/Sinachi CV.pdf" download class="btn btn-primary">
-                                    <i class="bi bi-download me-2"></i> Download My CV
-                                </a>
-                                <a href="#sponsor" class="btn btn-outline-primary">
-                                    <i class="bi bi-heart me-2"></i> Support My Work
-                                </a>
-<a href="hireme.html" class="hire-btn">
-    <i class="fas fa-briefcase"></i>
-    Hire Me
-</a>
+<div class="d-flex flex-wrap gap-3 mt-2 cta-group">
+    <a href="assets/img/Sinachi CV.pdf" download class="cta-btn cta-download">
+        <i class="bi bi-download"></i>
+        <span>Download My CV</span>
+    </a>
+
+    <a href="#sponsor" class="cta-btn cta-support">
+        <i class="bi bi-heart-fill"></i>
+        <span>Support My Work</span>
+    </a>
+
+    <a href="hireme.html" class="cta-btn cta-hire">
+        <span class="hire-icon">🚀</span>
+        <span>Hire Me</span>
+        <span class="cta-arrow">→</span>
+    </a>
+</div>
                             </div>
                         </div>
                     </div>
